@@ -1,0 +1,39 @@
+<!-- record/failed.html -->
+{% extends "ownner.html" %}
+{% load static %}
+{% block content %}
+<main class="py-16 px-6 min-h-screen bg-base-200">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center">Failed Food Supplies</h1>
+
+    <div class="overflow-x-auto bg-base-100 p-6 rounded-xl shadow-md">
+      <table class="table w-full">
+        <thead>
+          <tr class="text-lg font-bold text-gray-600">
+            <th>#</th>
+            <th>Supplier</th>
+            <th>Food Item</th>
+            <th>Expected Date</th>
+            <th>Failure Reason</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for failed in failed_supplies %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ failed.supplier_name }}</td>
+            <td>{{ failed.food_name }}</td>
+            <td>{{ failed.expected_date|date:"M d, Y" }}</td>
+            <td>{{ failed.reason }}</td>
+            <td><span class="badge badge-error">Failed</span></td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="6" class="text-center py-4 text-gray-500">No failed supplies recorded.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<main class="py-16 px-6 min-h-screen bg-base-200">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4">Student Registration</h1>
+    <p class="text-gray-500 mb-10">
+      Register as a student to enjoy exclusive benefits and offers at KFC.
+    </p>
+
+    <form method="POST" class="bg-base-100 shadow-xl rounded-2xl p-10 hover:shadow-2xl transition-all duration-300">
+      {% csrf_token %}
+      
+      {% if form.non_field_errors %}
+        <div class="text-red-500 font-semibold mb-4">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      {% if error %}
+        <p class="text-red-500 font-semibold mb-4">{{ error }}</p>
+      {% endif %}
+
+      {{ form|crispy }}
+
+      <button type="submit" class="btn btn-primary w-full mt-4">
+        Register Now
+      </button>
+    </form>
+  </div>
+</main>
+{% endblock %}

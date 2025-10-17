@@ -1,0 +1,54 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<main class="py-16 px-6 min-h-screen bg-base-200">
+  <div class="max-w-3xl mx-auto text-center">
+    <h1 class="text-4xl font-bold mb-4">Table Reservation</h1>
+    <p class="text-gray-500 mb-10">
+      Book your table easily and enjoy your meal at KFC.
+    </p>
+
+    <form class="grid gap-6 bg-base-100 p-8 rounded-xl shadow-md" method="POST">
+      {% csrf_token %} {{ form.non_field_errors }} {% if error %}
+      <p class="text-red-500 font-semibold mb-4">{{ error }}</p>
+      {% endif %}
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <input
+          name="name"
+          type="text"
+          placeholder="Full Name"
+          class="input input-bordered w-full"
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email Address"
+          class="input input-bordered w-full"
+          required
+        />
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <input
+          name="guest_phone_num"
+          type="tel"
+          placeholder="Number of Guests"
+          class="input input-bordered w-full"
+          required
+        />
+        <input
+          name="date"
+          type="datetime-local"
+          class="input input-bordered w-full"
+          required
+        />
+      </div>
+      <textarea
+        name="message"
+        placeholder="Special Requests"
+        class="textarea textarea-bordered w-full"
+      ></textarea>
+      <button class="btn btn-primary w-full">Reserve Now</button>
+    </form>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!-- record/pending.html -->
+{% extends "ownner.html" %}
+{% load static %}
+{% block content %}
+<main class="py-16 px-6 min-h-screen bg-base-200">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center">Pending Food Orders</h1>
+
+    <div class="overflow-x-auto bg-base-100 p-6 rounded-xl shadow-md">
+      <table class="table w-full">
+        <thead>
+          <tr class="text-lg font-bold text-gray-600">
+            <th>#</th>
+            <th>Customer</th>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Order Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for pending in pending_orders %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ pending.user.username }}</td>
+            <td>{{ pending.food.name }}</td>
+            <td>{{ pending.quantity }}</td>
+            <td>${{ pending.total_price }}</td>
+            <td>{{ pending.date_ordered|date:"M d, Y" }}</td>
+            <td>
+              <button class="btn btn-sm btn-success">Mark as Delivered</button>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="7" class="text-center py-4 text-gray-500">No pending orders.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+{% endblock %}

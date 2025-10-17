@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %} {% load tailwind_tags %} {% tailwind_css %}
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KFC</title>
+  </head>
+  <style>
+    [data-theme="light"] {
+      .my-btn {
+        background-color: #1ea1f1;
+        border-color: #1ea1f1;
+      }
+      .my-btn:hover {
+        background-color: #1c96e1;
+        border-color: #1c96e1;
+      }
+    }
+    *{
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+  </style>
+  <body class="h-screen">
+    {% include "navbar.html" %}
+    <main class="pt-15">{% block content %} {% endblock %}</main>
+    {% include "footer.html" %}
+  </body>
+</html>

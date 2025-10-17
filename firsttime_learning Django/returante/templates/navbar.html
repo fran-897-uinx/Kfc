@@ -1,0 +1,77 @@
+<div class="navbar bg-base-100 shadow-sm fixed z-30">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"
+          />
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow-xl"
+      >
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'reservation' %}">Reservation</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+
+        {% if request.user.is_authenticated and request.user.is_staff %}
+          <li><a href="{% url 'users_record' %}" class="btn block md:hidden pt-2">Admin Dashboard</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-4xl font-bold text-shadow-white">KFC</a>
+  </div>
+
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 font-bold text-gray-700">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'reservation' %}">Reservation</a></li>
+      <li><a href="{% url 'gallery' %}">Gallery</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'blog' %}">Blog</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-end gap-3">
+    {% if request.user.is_authenticated and request.user.is_staff %}
+      <a href="{% url 'users_record' %}" class="btn hidden md:block pt-2">Admin Dashboard</a>
+    {% endif %}
+
+    {% if user.is_authenticated and user.student %}
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost font-semibold text-gray-700">
+          👋 Hi, {{ user.student.name|default:user.username }}
+        </label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44">
+          <li><a href="{% url 'student_profile' %}">View Profile</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      </div>
+    {% else %}
+      <a class="btn btn-primary" href="{% url 'student' %}">
+        Register As A Student
+      </a>
+    {% endif %}
+
+    <input
+      type="checkbox"
+      value="dark"
+      class="ml-2 toggle toggle-sm toggle-checkbox theme-controller"
+    />
+  </div>
+</div>

@@ -1,0 +1,54 @@
+
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<main class="py-16 px-6 min-h-screen">
+  <div class="text-center mb-10">
+    <h1 class="text-4xl font-bold mb-2">Our Menu</h1>
+    <p class="text-gray-500">Choose from our delicious selections below</p>
+  </div>
+
+  <div class="tabs tabs-boxed justify-center mb-10">
+    <a class="tab tab-active">Foods</a>
+    <a class="tab">Drinks</a>
+    <a class="tab">Snacks</a>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- Foods -->
+    <div class="card bg-base-100 shadow-lg h-92">
+      <figure><img src="{% static 'imgs/snacks.jpg' %}" alt="Chicken Bucket"/></figure>
+      <div class="card-body">
+        <h2 class="card-title">KFC Chicken Bucket</h2>
+        <p>Crispy, golden chicken served hot with your choice of sides.</p>
+        <div class="card-actions justify-end">
+          <span class="badge badge-outline">$10.99</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 shadow-lg h-92">
+      <figure><img src="{% static 'imgs/rice.jpg' %}" alt="Zinger Burger" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Zinger Burger</h2>
+        <p>Juicy chicken fillet with lettuce, mayo, and a toasted bun.</p>
+        <div class="card-actions justify-end">
+          <span class="badge badge-outline">$5.99</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 shadow-lg h-92">
+      <figure><img src="{% static 'imgs/peppers.jpg' %}" alt="Family Meal" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Family Meal</h2>
+        <p>A hearty combo for the whole family — 8 pieces, fries & drinks.</p>
+        <div class="card-actions justify-end">
+          <span class="badge badge-outline">$25.99</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</main>
+{% endblock %}

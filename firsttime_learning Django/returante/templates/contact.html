@@ -1,0 +1,55 @@
+<!-- contact.html -->
+
+{% extends "main.html" %} {% load static %} {% block content %}
+<main class="py-16 px-6 min-h-screen bg-base-200">
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
+    <p class="text-gray-500 mb-10">
+      We’d love to hear from you! Reach out anytime.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto my-auto">
+    {% csrf_token %}
+    <form class="bg-base-100 p-8 rounded-xl shadow-md" method="POST">
+      <div class="grid gap-4 mx-auto">
+        <input
+          name="name"
+          type="text"
+          placeholder="Your Name"
+          class="input input-bordered w-full"
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="Your Email"
+          class="input input-bordered w-full"
+          required
+        />
+        <textarea
+          name="description"
+          placeholder="Message"
+          class="textarea textarea-bordered w-full"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+
+    <div
+      class="bg-base-100 p-8 rounded-xl shadow-md flex flex-col justify-center"
+    >
+      <h2 class="text-xl font-bold mb-4">Our Location</h2>
+      <p class="mb-2">🍗 KFC Restaurant, Lagos, Nigeria</p>
+      <p class="mb-2">📞 +234 800 555 1212</p>
+      <p class="mb-2">📧 info@kfc.com</p>
+      <iframe
+        class="rounded-lg mt-4 w-full h-64"
+        src="https://maps.google.com/maps?q=lagos%20nigeria&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      ></iframe>
+    </div>
+  </div>
+</main>
+{% endblock %}

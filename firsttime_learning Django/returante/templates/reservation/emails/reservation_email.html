@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reservation Confirmation</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; background-color: #fafafa; padding: 20px;">
+    <div style="max-inline-size: 600px; background: white; margin: auto; padding: 30px; border-radius: 8px;">
+      <h2 style="color: #d32f2f;">Hello {{ name }},</h2>
+      <p>
+        Thank you for booking a table with <strong>KFC</strong> 🍗!
+      </p>
+      <p>
+        Your reservation details:
+        <br><b>Date:</b> {{ date }}<br>
+        <b>Guests:</b> {{ guest_phone_num }}<br>
+        <b>Message:</b> {{ description }}
+      </p>
+      <p>We look forward to serving you!</p>
+      <hr>
+      <p style="font-size: 13px; color: gray;">– The KFC Team</p>
+    </div>
+  </body>
+</html>

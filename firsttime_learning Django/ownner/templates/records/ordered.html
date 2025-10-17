@@ -1,0 +1,41 @@
+
+{% extends "ownner.html" %}
+{% load static %}
+{% block content %}
+<main class="py-16 px-6 min-h-screen bg-base-200">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center">Ordered Foods</h1>
+
+    <div class="overflow-x-auto bg-base-100 p-6 rounded-xl shadow-md">
+      <table class="table w-full">
+        <thead>
+          <tr class="text-lg font-bold text-gray-600">
+            <th>#</th>
+            <th>Customer</th>
+            <th>Food Item</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ order.user.username }}</td>
+            <td>{{ order.food.name }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>${{ order.total_price }}</td>
+            <td><span class="badge badge-success">Delivered</span></td>
+            <td>{{ order.date_ordered|date:"M d, Y" }}</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="7" class="text-center py-4 text-gray-500">No completed orders yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+{% endblock %}

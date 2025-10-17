@@ -1,0 +1,69 @@
+send_mail() method in Django
+
+def reservation_view(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        date = request.POST.get("date")
+        number = request.POST.get("guest_phone_num")
+        description = request.POST.get("message")
+
+        if not all([name, email, date, number, description]):
+            return render(
+                request,
+                "reservation.html",
+                {"error": "All fields are required, please."},
+            )
+
+        # Save reservation
+        reservation = Reservation.objects.create(
+            name=name, email=email, date=date, guest_phone_num=number, meassage=description
+        )
+
+        # Send confirmation email
+        subject = "Your Table Reservation Has Been Received"
+        email_message = f"""
+        Hello {name},
+        Your table reservation has been received. You will receive a call shortly.
+        Date: {date}
+        We look forward to having you dine with us.
+        
+        - The KFC Team
+        """
+        from_email = settings.DEFAULT_FROM_EMAIL
+        recipient_list = [reservation.email]
+
+        send_mail(subject, email_message, from_email, recipient_list, fail_silently=False)
+
+        return render(request, "reservation/reservation_success.html", {"reservation": reservation})
+
+    return render(request, "reservation.html")
+
+
+
+
+
+form createion using crispy forms
+
+    from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Field, Submit
+from .models import Student
+
+class StudentForm(forms.ModelForm):
+    class Meta:
+        model = Student
+        fields = ['name', 'age', 'email', 'phone_number', 'reason']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.layout = Layout(
+            Field('name', css_class='input input-bordered w-full'),
+            Field('age', css_class='input input-bordered w-full'),
+            Field('email', css_class='input input-bordered w-full'),
+            Field('phone_number', css_class='input input-bordered w-full'),
+            Field('reason', css_class='textarea textarea-bordered w-full'),
+            Submit('submit', 'Register Now', css_class='btn btn-primary w-full mt-4')
+        )
