@@ -1,12 +1,20 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 import requests
-from .models import Menu, Reservation, Student, GroupLink
+from .models import (
+    Menu,
+    Reservation,
+    Student,
+    GroupLink,
+    Contact,
+    GalleryItem,
+    BlogDisplay,
+)
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import MenuSerializer
 from rest_framework import generics
-from .forms import StudentForm
+from .forms import StudentForm, ReservationForm
 
 # from django.http import HttpResponse, HttpResponseRedirect
 
@@ -29,9 +37,16 @@ def blog(request):
     )
     data = response.json()
     meals = data.get("meals", [])
+    blogs = BlogDisplay.objects.all().order_by("created_at")
 
-    context = {"meals": meals}
+    context = {"meals": meals, "blogs": blogs}
     return render(request, "blog.html", context)
+
+
+def blog_details(request, pk):
+    blog = get_object_or_404(BlogDisplay, pk=pk)
+
+    return render(request, "blog_details.html", {"blog": blog})
 
 
 def about(request):
@@ -39,83 +54,29 @@ def about(request):
 
 
 def contact(request):
-    return render(request, "contact.html")
-
-
-@api_view(["GET", "POST", "PUT", "DELETE"])
-def menu(request, id=None):
-    menus = Menu.objects.all()
-    if request.method == "GET":
-        serializer = MenuSerializer(menus, many=True)
-        return Response(serializer.data)
-
-    elif request.method == "PUT":
-        menus = Menu.objects.get(id=id)
-        serializer = MenuSerializer(menus, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == "POST":
-        serializer = MenuSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == "DELETE":
-        menus.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-def reservation_view(request):
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
-        date = request.POST.get("date")
-        number = request.POST.get("guest_phone_num")
-        description = request.POST.get("message")
-
-        if not all([name, email, date, number, description]):
+        desc = request.POST.get("description")
+        if not all([name, email, desc]):
             return render(
                 request,
-                "reservation.html",
+                "contact.html",
                 {"error": "All fields are required, please."},
             )
-
-        # Save reservation
-        reservation = Reservation.objects.create(
-            name=name,
-            email=email,
-            date=date,
-            guest_phone_num=number,
-            meassage=description,
-        )
-
+        contact_details = Contact.objects.create(name=name, email=email, desc=desc)
         html_content = render_to_string(
-            "reservation/emails/reservation_email.html",
-            {
-                "name": name,
-                "email": email,
-                "date": date,
-                "guest_phone_num": number,
-                "description": description,
-            },
+            "contact_email.html",
+            {"name": name, "email": email, "desc": desc},
         )
-
-        # Send confirmation email
-        subject = "Your Table Reservation Has Been Received"
+        subject = "Contact Form Submission Received"
         text_content = f"""
         Hello {name},
-        Your table reservation has been received. You will receive a call shortly.
-        Date: {date}
-        We look forward to having you dine with us.
-        
-        - The KFC Team
+        Thank you for reaching out to us. We have received your message and will get back to you shortly.
+        Here is a summary of your submission:
         """
-        from_email = settings.DEFAULT_FROM_EMAIL
-        recipient_list = [reservation.email]
+        from_email = [email]
+        recipient_list = settings.DEFAULT_FROM_EMAIL
 
         email = EmailMultiAlternatives(
             subject, text_content, from_email, to=recipient_list
@@ -124,20 +85,102 @@ def reservation_view(request):
         email.send(fail_silently=False)
 
         return render(
-            request,
-            "reservation/reservation_success.html",
-            {"reservation": reservation},
+            request, "contactsuccess.html", {"contact_details": contact_details}
         )
+    return render(request, "contact.html")
 
-    return render(request, "reservation.html")
+
+# @api_view(["GET", "POST", "PUT", "DELETE"])
+def menu(request, category=None):
+    menus = Menu.objects.all()
+
+    category_filter = request.GET.get("category")
+    if category_filter in ["food", "drink", "snack"]:
+        menus = menus.filter(selection=category_filter)
+
+    context = {"menus": menus, "active_category": category_filter}
+    return render(request, "menu.html", context)
+
+
+def reservation_view(request):
+    if request.method == "POST":
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            # Save the reservation
+            reservation = form.save()
+
+            # Extract data from the saved reservation
+            name = reservation.name
+            email = reservation.email
+            date = reservation.date
+            number = reservation.guest_phone_num
+            description = reservation.meassage
+            menu_items = reservation.menu_items.all()
+
+            # -------------------------
+            # Customer Email
+            # -------------------------
+            html_content = render_to_string(
+                "reservation/emails/reservation_email.html",
+                {
+                    "reservation": reservation,
+                    "menu_items": menu_items,
+                },
+            )
+            subject = "Your Table Reservation Has Been Received"
+            text_content = f"""
+            Hello {name},
+
+            Your table reservation has been received. You will receive a call shortly.
+            Date: {date}
+
+            We look forward to having you dine with us.
+
+            - The KFC Team
+            """
+            customer_email = EmailMultiAlternatives(
+                subject, text_content, settings.DEFAULT_FROM_EMAIL, [email]
+            )
+            customer_email.attach_alternative(html_content, "text/html")
+            customer_email.send(fail_silently=False)
+
+            # -------------------------
+            # Owner Email
+            # -------------------------
+            owner_html = render_to_string(
+                "reservation/emails/reservation_email_owner.html",
+                {
+                    "reservation": reservation,
+                    "menu_items": menu_items,
+                },
+            )
+            owner_email = EmailMultiAlternatives(
+                "📩 New Reservation Received",
+                "",
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.DEFAULT_FROM_EMAIL],  # Or your actual owner email(s)
+            )
+            owner_email.attach_alternative(owner_html, "text/html")
+            owner_email.send(fail_silently=False)
+
+            return render(
+                request,
+                "reservation/reservation_success.html",
+                {"reservation": reservation},
+            )
+
+    else:
+        form = ReservationForm()
+    return render(request, "reservation.html", {"form": form})
 
 
 def gallery(request):
     response = requests.get("https://www.themealdb.com/api/json/v1/1/search.php?s=")
     data = response.json()
     meals = data.get("meals", [])
+    items = GalleryItem.objects.all().order_by("-created_at")
 
-    context = {"meals": meals}
+    context = {"meals": meals, "items": items}
     return render(request, "gallery.html", context)
 
 

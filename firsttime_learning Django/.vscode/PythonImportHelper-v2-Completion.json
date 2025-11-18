@@ -17,6 +17,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -121,6 +129,46 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -138,27 +186,19 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.conf",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -203,6 +243,54 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -386,14 +474,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -415,6 +495,30 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "GalleryItem",
+        "importPath": "returante.models",
+        "description": "returante.models",
+        "isExtraImport": true,
+        "detail": "returante.models",
         "documentation": {}
     },
     {
@@ -529,7 +633,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = \"django-insecure-rcbjmv9dn9rm5a_k0p(7r1qd@5bg*pt(7nwtdw_c$&lhtq_u_2\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = os.getenv(\"DEBUG\")\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -538,7 +642,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "SECRET_KEY = \"django-insecure-rcbjmv9dn9rm5a_k0p(7r1qd@5bg*pt(7nwtdw_c$&lhtq_u_2\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition",
+        "peekOfCode": "SECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = os.getenv(\"DEBUG\")\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -547,7 +651,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
+        "peekOfCode": "DEBUG = os.getenv(\"DEBUG\")\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -655,7 +759,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -664,7 +768,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -673,7 +777,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -682,7 +786,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -691,7 +795,43 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "STATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,\n# }",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,\n# }",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -700,7 +840,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,\n# }\nEMAIL_BACKEND = \"django.core.mail.backends.smtp.EmailBackend\"\nEMAIL_HOST = \"smtp.gmail.com\"  # For Gmail. Use your email provider's SMTP server for other services\nEMAIL_PORT = 587  # Common ports: 587 (TLS), 465 (SSL)",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,\n# }\nEMAIL_BACKEND = os.getenv(\"EMAIL_BACKEND\")\nEMAIL_HOST = os.getenv(\"EMAIL_HOST\")\nEMAIL_PORT = os.getenv(\"EMAIL_PORT\")",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -709,7 +849,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "EMAIL_BACKEND = \"django.core.mail.backends.smtp.EmailBackend\"\nEMAIL_HOST = \"smtp.gmail.com\"  # For Gmail. Use your email provider's SMTP server for other services\nEMAIL_PORT = 587  # Common ports: 587 (TLS), 465 (SSL)\nEMAIL_USE_TLS = (\n    True  # Set to True for TLS, False for SSL (or EMAIL_USE_SSL = True for SSL)\n)\nEMAIL_HOST_USER = \"prevailfrancis@gmail.com\"\nEMAIL_HOST_PASSWORD = (\n    \"tjxs djad sjwu nubq\"  # Use an app-specific password if using services like Gmail\n)",
+        "peekOfCode": "EMAIL_BACKEND = os.getenv(\"EMAIL_BACKEND\")\nEMAIL_HOST = os.getenv(\"EMAIL_HOST\")\nEMAIL_PORT = os.getenv(\"EMAIL_PORT\")\nEMAIL_USE_TLS = os.getenv(\"EMAIL_USE_TLS\")\nEMAIL_HOST_USER = os.getenv(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.getenv(\"EMAIL_HOST_PASSWORD\")\nDEFAULT_FROM_EMAIL = os.getenv(\"DEFAULT_FROM_EMAIL\")\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -718,7 +858,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "EMAIL_HOST = \"smtp.gmail.com\"  # For Gmail. Use your email provider's SMTP server for other services\nEMAIL_PORT = 587  # Common ports: 587 (TLS), 465 (SSL)\nEMAIL_USE_TLS = (\n    True  # Set to True for TLS, False for SSL (or EMAIL_USE_SSL = True for SSL)\n)\nEMAIL_HOST_USER = \"prevailfrancis@gmail.com\"\nEMAIL_HOST_PASSWORD = (\n    \"tjxs djad sjwu nubq\"  # Use an app-specific password if using services like Gmail\n)\nDEFAULT_FROM_EMAIL = (",
+        "peekOfCode": "EMAIL_HOST = os.getenv(\"EMAIL_HOST\")\nEMAIL_PORT = os.getenv(\"EMAIL_PORT\")\nEMAIL_USE_TLS = os.getenv(\"EMAIL_USE_TLS\")\nEMAIL_HOST_USER = os.getenv(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.getenv(\"EMAIL_HOST_PASSWORD\")\nDEFAULT_FROM_EMAIL = os.getenv(\"DEFAULT_FROM_EMAIL\")\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -727,7 +867,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "EMAIL_PORT = 587  # Common ports: 587 (TLS), 465 (SSL)\nEMAIL_USE_TLS = (\n    True  # Set to True for TLS, False for SSL (or EMAIL_USE_SSL = True for SSL)\n)\nEMAIL_HOST_USER = \"prevailfrancis@gmail.com\"\nEMAIL_HOST_PASSWORD = (\n    \"tjxs djad sjwu nubq\"  # Use an app-specific password if using services like Gmail\n)\nDEFAULT_FROM_EMAIL = (\n   \"no-reply@kfc.com\"  # Email address used if no 'from_email' is specified",
+        "peekOfCode": "EMAIL_PORT = os.getenv(\"EMAIL_PORT\")\nEMAIL_USE_TLS = os.getenv(\"EMAIL_USE_TLS\")\nEMAIL_HOST_USER = os.getenv(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.getenv(\"EMAIL_HOST_PASSWORD\")\nDEFAULT_FROM_EMAIL = os.getenv(\"DEFAULT_FROM_EMAIL\")\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -736,7 +876,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "EMAIL_USE_TLS = (\n    True  # Set to True for TLS, False for SSL (or EMAIL_USE_SSL = True for SSL)\n)\nEMAIL_HOST_USER = \"prevailfrancis@gmail.com\"\nEMAIL_HOST_PASSWORD = (\n    \"tjxs djad sjwu nubq\"  # Use an app-specific password if using services like Gmail\n)\nDEFAULT_FROM_EMAIL = (\n   \"no-reply@kfc.com\"  # Email address used if no 'from_email' is specified\n)",
+        "peekOfCode": "EMAIL_USE_TLS = os.getenv(\"EMAIL_USE_TLS\")\nEMAIL_HOST_USER = os.getenv(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.getenv(\"EMAIL_HOST_PASSWORD\")\nDEFAULT_FROM_EMAIL = os.getenv(\"DEFAULT_FROM_EMAIL\")\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -745,7 +885,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "EMAIL_HOST_USER = \"prevailfrancis@gmail.com\"\nEMAIL_HOST_PASSWORD = (\n    \"tjxs djad sjwu nubq\"  # Use an app-specific password if using services like Gmail\n)\nDEFAULT_FROM_EMAIL = (\n   \"no-reply@kfc.com\"  # Email address used if no 'from_email' is specified\n)\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
+        "peekOfCode": "EMAIL_HOST_USER = os.getenv(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.getenv(\"EMAIL_HOST_PASSWORD\")\nDEFAULT_FROM_EMAIL = os.getenv(\"DEFAULT_FROM_EMAIL\")\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -754,7 +894,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "EMAIL_HOST_PASSWORD = (\n    \"tjxs djad sjwu nubq\"  # Use an app-specific password if using services like Gmail\n)\nDEFAULT_FROM_EMAIL = (\n   \"no-reply@kfc.com\"  # Email address used if no 'from_email' is specified\n)\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = os.getenv(\"EMAIL_HOST_PASSWORD\")\nDEFAULT_FROM_EMAIL = os.getenv(\"DEFAULT_FROM_EMAIL\")\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -763,7 +903,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "DEFAULT_FROM_EMAIL = (\n   \"no-reply@kfc.com\"  # Email address used if no 'from_email' is specified\n)\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
+        "peekOfCode": "DEFAULT_FROM_EMAIL = os.getenv(\"DEFAULT_FROM_EMAIL\")\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"tailwind\"\nCRISPY_TEMPLATE_PACK = \"tailwind\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -790,7 +930,7 @@
         "kind": 5,
         "importPath": "kyc.urls",
         "description": "kyc.urls",
-        "peekOfCode": "router = routers.DefaultRouter()\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"__reload__/\", include(\"django_browser_reload.urls\")),\n    path(\"\", include(\"returante.urls\")),\n    path(\"ownner/users_record/\", include(\"ownner.urls\"), name=\"ownner\"),\n    path('', include(router.urls)),\n]",
+        "peekOfCode": "router = routers.DefaultRouter()\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"__reload__/\", include(\"django_browser_reload.urls\")),\n    path(\"\", include(\"returante.urls\")),\n    path(\"ownner/users_record/\", include(\"ownner.urls\"), name=\"ownner\"),\n    path('', include(router.urls)),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "kyc.urls",
         "documentation": {}
     },
@@ -799,7 +939,7 @@
         "kind": 5,
         "importPath": "kyc.urls",
         "description": "kyc.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"__reload__/\", include(\"django_browser_reload.urls\")),\n    path(\"\", include(\"returante.urls\")),\n    path(\"ownner/users_record/\", include(\"ownner.urls\"), name=\"ownner\"),\n    path('', include(router.urls)),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"__reload__/\", include(\"django_browser_reload.urls\")),\n    path(\"\", include(\"returante.urls\")),\n    path(\"ownner/users_record/\", include(\"ownner.urls\"), name=\"ownner\"),\n    path('', include(router.urls)),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "kyc.urls",
         "documentation": {}
     },
@@ -819,6 +959,24 @@
         "description": "ownner.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Food',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "ownner.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ownner.migrations.0002_user",
+        "description": "ownner.migrations.0002_user",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ownner', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='user',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=20)),",
+        "detail": "ownner.migrations.0002_user",
+        "documentation": {}
+    },
+    {
+        "label": "Useradmin",
+        "kind": 6,
+        "importPath": "ownner.admin",
+        "description": "ownner.admin",
+        "peekOfCode": "class Useradmin(admin.ModelAdmin):\n    list_display = (\"name\", \"email\", \"role\")\n    search_fields = (\"role\", \"name\")\n    list_filter = (\"name\", \"role\")\n@admin.register(Food)\nclass FoodAdmin(admin.ModelAdmin):\n    list_display = ('name', 'category', 'price', 'available', 'date_added')\n    search_fields = ('name',)\n    list_filter = ('category', 'available')\n@admin.register(Order)",
+        "detail": "ownner.admin",
         "documentation": {}
     },
     {
@@ -858,6 +1016,15 @@
         "documentation": {}
     },
     {
+        "label": "user",
+        "kind": 6,
+        "importPath": "ownner.models",
+        "description": "ownner.models",
+        "peekOfCode": "class user(models.Model):\n    ROLES = [(\"Customer\", \"customer\"), (\"Student\", \"student\"), (\"Ownner\", \"ownner\")]\n    name = models.CharField(max_length=20)\n    email = models.EmailField()\n    first_name = models.CharField(max_length=20)\n    last_name = models.CharField(max_length=20)\n    role = models.CharField(max_length=10, choices=ROLES, default=\"Customer\")\n# ==============================\n#  FOOD MODEL\n# ==============================",
+        "detail": "ownner.models",
+        "documentation": {}
+    },
+    {
         "label": "Food",
         "kind": 6,
         "importPath": "ownner.models",
@@ -889,7 +1056,7 @@
         "kind": 5,
         "importPath": "ownner.urls",
         "description": "ownner.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.users_record, name=\"users_record\"),\n    path(\"ordered_record/\", views.ordered_record, name=\"ordered_record\"),\n    path(\"pending_record/\", views.pending_record, name=\"pending_record\"),\n    path(\"failed_record/\", views.failed_record, name=\"failed_record\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.users_record, name=\"users_record\"),\n    path(\"ordered_record/\", views.ordered_record, name=\"ordered_record\"),\n    path(\"pending_record/\", views.pending_record, name=\"pending_record\"),\n    path(\"failed_record/\", views.failed_record, name=\"failed_record\"), \n    path(\"upload-gallery/\", views.upload_gallery, name=\"upload_gallery\"),\n]",
         "detail": "ownner.urls",
         "documentation": {}
     },
@@ -907,7 +1074,7 @@
         "kind": 2,
         "importPath": "ownner.views",
         "description": "ownner.views",
-        "peekOfCode": "def ordered_record(request):\n    orders = Order.objects.filter(status='delivered')\n    return render(request, 'records/ordered.html', {'orders': orders})\ndef pending_record(request):\n    pending_orders = Order.objects.filter(status='pending')\n    return render(request, 'records/pending.html', {'pending_orders': pending_orders})\ndef failed_record(request):\n    failed_supplies = Supply.objects.filter(status='failed')\n    return render(request, 'records/failed.html', {'failed_supplies': failed_supplies})",
+        "peekOfCode": "def ordered_record(request):\n    orders = Order.objects.filter(status='delivered')\n    return render(request, 'records/ordered.html', {'orders': orders})\ndef pending_record(request):\n    pending_orders = Order.objects.filter(status='pending')\n    return render(request, 'records/pending.html', {'pending_orders': pending_orders})\ndef failed_record(request):\n    failed_supplies = Supply.objects.filter(status='failed')\n    return render(request, 'records/failed.html', {'failed_supplies': failed_supplies})\ndef upload_gallery(request):",
         "detail": "ownner.views",
         "documentation": {}
     },
@@ -916,7 +1083,7 @@
         "kind": 2,
         "importPath": "ownner.views",
         "description": "ownner.views",
-        "peekOfCode": "def pending_record(request):\n    pending_orders = Order.objects.filter(status='pending')\n    return render(request, 'records/pending.html', {'pending_orders': pending_orders})\ndef failed_record(request):\n    failed_supplies = Supply.objects.filter(status='failed')\n    return render(request, 'records/failed.html', {'failed_supplies': failed_supplies})",
+        "peekOfCode": "def pending_record(request):\n    pending_orders = Order.objects.filter(status='pending')\n    return render(request, 'records/pending.html', {'pending_orders': pending_orders})\ndef failed_record(request):\n    failed_supplies = Supply.objects.filter(status='failed')\n    return render(request, 'records/failed.html', {'failed_supplies': failed_supplies})\ndef upload_gallery(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        image = request.FILES.get(\"image\")",
         "detail": "ownner.views",
         "documentation": {}
     },
@@ -925,7 +1092,16 @@
         "kind": 2,
         "importPath": "ownner.views",
         "description": "ownner.views",
-        "peekOfCode": "def failed_record(request):\n    failed_supplies = Supply.objects.filter(status='failed')\n    return render(request, 'records/failed.html', {'failed_supplies': failed_supplies})",
+        "peekOfCode": "def failed_record(request):\n    failed_supplies = Supply.objects.filter(status='failed')\n    return render(request, 'records/failed.html', {'failed_supplies': failed_supplies})\ndef upload_gallery(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        image = request.FILES.get(\"image\")\n        if name and image:\n            GalleryItem.objects.create(name=name, image=image)\n        return redirect(\"gallery\")",
+        "detail": "ownner.views",
+        "documentation": {}
+    },
+    {
+        "label": "upload_gallery",
+        "kind": 2,
+        "importPath": "ownner.views",
+        "description": "ownner.views",
+        "peekOfCode": "def upload_gallery(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        image = request.FILES.get(\"image\")\n        if name and image:\n            GalleryItem.objects.create(name=name, image=image)\n        return redirect(\"gallery\")\n    return render(request, \"upload_gallery.html\")",
         "detail": "ownner.views",
         "documentation": {}
     },
@@ -1011,6 +1187,33 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0010_contact",
+        "description": "returante.migrations.0010_contact",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0009_student_joined_group_name_student_whatsapp_joined'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Contact',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=20)),",
+        "detail": "returante.migrations.0010_contact",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0011_alter_reservation_guest_phone_num",
+        "description": "returante.migrations.0011_alter_reservation_guest_phone_num",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0010_contact'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='reservation',\n            name='guest_phone_num',\n            field=models.IntegerField(),\n        ),",
+        "detail": "returante.migrations.0011_alter_reservation_guest_phone_num",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0012_galleryitem",
+        "description": "returante.migrations.0012_galleryitem",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0011_alter_reservation_guest_phone_num'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='GalleryItem',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=255)),",
+        "detail": "returante.migrations.0012_galleryitem",
+        "documentation": {}
+    },
+    {
         "label": "MenuAdmin",
         "kind": 6,
         "importPath": "returante.admin",
@@ -1047,6 +1250,15 @@
         "documentation": {}
     },
     {
+        "label": "ContactAdmin",
+        "kind": 6,
+        "importPath": "returante.admin",
+        "description": "returante.admin",
+        "peekOfCode": "class ContactAdmin(admin.ModelAdmin):\n    list_display = (\"name\", \"email\")",
+        "detail": "returante.admin",
+        "documentation": {}
+    },
+    {
         "label": "ReturanteConfig",
         "kind": 6,
         "importPath": "returante.apps",
@@ -1065,6 +1277,15 @@
         "documentation": {}
     },
     {
+        "label": "LoginForm",
+        "kind": 6,
+        "importPath": "returante.forms",
+        "description": "returante.forms",
+        "peekOfCode": "class LoginForm(forms.ModelForm):\n    class Meta:\n        model = Student\n        fields = [\"email\", \"phone_number\"]\n        widgets = {\n            \"email\": forms.EmailInput(\n                attrs={\n                    \"class\": \"input input-bordered w-full\",\n                    \"placeholder\": \"Enter your registered email address\",\n                }",
+        "detail": "returante.forms",
+        "documentation": {}
+    },
+    {
         "label": "Menu",
         "kind": 6,
         "importPath": "returante.models",
@@ -1078,7 +1299,7 @@
         "kind": 6,
         "importPath": "returante.models",
         "description": "returante.models",
-        "peekOfCode": "class Reservation(models.Model):\n    name = models.CharField(max_length=30)\n    email = models.EmailField()\n    date = models.DateTimeField(auto_now_add=True)\n    meassage = models.TextField(max_length=500, null=True, blank=True)\n    guest_phone_num = models.IntegerField(max_length=20)\n    def __str__(self):\n        return f\"placed reservertion by {self.name} on {self.date}\"\nclass GroupLink(models.Model):\n    title = models.CharField(max_length=100, default=\"KFC Student Group\")",
+        "peekOfCode": "class Reservation(models.Model):\n    name = models.CharField(max_length=30)\n    email = models.EmailField()\n    date = models.DateTimeField(auto_now_add=True)\n    meassage = models.TextField(max_length=500, null=True, blank=True)\n    guest_phone_num = models.IntegerField()\n    def __str__(self):\n        return f\"placed reservertion by {self.name} on {self.date}\"\nclass GroupLink(models.Model):\n    title = models.CharField(max_length=100, default=\"KFC Student Group\")",
         "detail": "returante.models",
         "documentation": {}
     },
@@ -1097,6 +1318,24 @@
         "importPath": "returante.models",
         "description": "returante.models",
         "peekOfCode": "class Student(models.Model):\n    name = models.CharField(max_length=100)\n    age = models.IntegerField(blank=True, null=True)\n    email = models.EmailField()\n    phone_number = models.CharField(max_length=15)\n    registered_on = models.DateTimeField(auto_now_add=True)\n    reason = models.TextField(blank=True, null=True)\n    whatsapp_joined = models.BooleanField(default=False)\n    joined_group_name = models.ForeignKey(\n        GroupLink,",
+        "detail": "returante.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "kind": 6,
+        "importPath": "returante.models",
+        "description": "returante.models",
+        "peekOfCode": "class Contact(models.Model):\n    name = models.CharField(max_length=20)\n    email = models.EmailField()\n    desc = models.TextField(max_length=200)\n    def __str__(self):\n        return self.name\nclass GalleryItem(models.Model):\n    name = models.CharField(max_length=255)\n    image = models.ImageField(upload_to=\"gallery/\")\n    created_at = models.DateTimeField(auto_now_add=True)",
+        "detail": "returante.models",
+        "documentation": {}
+    },
+    {
+        "label": "GalleryItem",
+        "kind": 6,
+        "importPath": "returante.models",
+        "description": "returante.models",
+        "peekOfCode": "class GalleryItem(models.Model):\n    name = models.CharField(max_length=255)\n    image = models.ImageField(upload_to=\"gallery/\")\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.name",
         "detail": "returante.models",
         "documentation": {}
     },
@@ -1141,7 +1380,7 @@
         "kind": 2,
         "importPath": "returante.views",
         "description": "returante.views",
-        "peekOfCode": "def about(request):\n    return render(request, \"about.html\")\ndef contact(request):\n    return render(request, \"contact.html\")\n@api_view([\"GET\", \"POST\", \"PUT\", \"DELETE\"])\ndef menu(request, id=None):\n    menus = Menu.objects.all()\n    if request.method == \"GET\":\n        serializer = MenuSerializer(menus, many=True)\n        return Response(serializer.data)",
+        "peekOfCode": "def about(request):\n    return render(request, \"about.html\")\ndef contact(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        email = request.POST.get(\"email\")\n        desc = request.POST.get(\"description\")\n        if not all([name, email, desc]):\n            return render(\n                request,",
         "detail": "returante.views",
         "documentation": {}
     },
@@ -1150,7 +1389,7 @@
         "kind": 2,
         "importPath": "returante.views",
         "description": "returante.views",
-        "peekOfCode": "def contact(request):\n    return render(request, \"contact.html\")\n@api_view([\"GET\", \"POST\", \"PUT\", \"DELETE\"])\ndef menu(request, id=None):\n    menus = Menu.objects.all()\n    if request.method == \"GET\":\n        serializer = MenuSerializer(menus, many=True)\n        return Response(serializer.data)\n    elif request.method == \"PUT\":\n        menus = Menu.objects.get(id=id)",
+        "peekOfCode": "def contact(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        email = request.POST.get(\"email\")\n        desc = request.POST.get(\"description\")\n        if not all([name, email, desc]):\n            return render(\n                request,\n                \"contact.html\",\n                {\"error\": \"All fields are required, please.\"},",
         "detail": "returante.views",
         "documentation": {}
     },
@@ -1177,7 +1416,7 @@
         "kind": 2,
         "importPath": "returante.views",
         "description": "returante.views",
-        "peekOfCode": "def gallery(request):\n    response = requests.get(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\")\n    data = response.json()\n    meals = data.get(\"meals\", [])\n    context = {\"meals\": meals}\n    return render(request, \"gallery.html\", context)\ndef food_list(request):\n    foods = Menu.object.filter(selection=\"food\")\n    return render(request, \"menu.html\", {\"foods\": foods})\ndef drink_list(request):",
+        "peekOfCode": "def gallery(request):\n    response = requests.get(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\")\n    data = response.json()\n    meals = data.get(\"meals\", [])\n    items = GalleryItem.objects.all().order_by(\"-created_at\")\n    context = {\"meals\": meals, \"items\": items}\n    return render(request, \"gallery.html\", context)\ndef food_list(request):\n    foods = Menu.object.filter(selection=\"food\")\n    return render(request, \"menu.html\", {\"foods\": foods})",
         "detail": "returante.views",
         "documentation": {}
     },

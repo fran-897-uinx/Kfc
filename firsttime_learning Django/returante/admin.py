@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Menu, Reservation, Student, GroupLink
+from .models import (
+    Menu,
+    Reservation,
+    Student,
+    GroupLink,
+    Contact,
+    GalleryItem,
+    BlogDisplay,
+)
 
 # ----------------------------
 #  MENU ADMIN
@@ -50,3 +58,21 @@ class GroupLinkAdmin(admin.ModelAdmin):
             # Deactivate all other active groups before saving this one
             GroupLink.objects.exclude(id=obj.id).update(active=False)
         super().save_model(request, obj, form, change)
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ("name", "email")
+
+
+@admin.register(GalleryItem)
+class GalleryItemAdmin(admin.ModelAdmin):
+    list_display = ["name"]
+
+
+@admin.register(BlogDisplay)
+class BlogDisplayAdmin(admin.ModelAdmin):
+    list_display = [
+        "title",
+        "sub_title",
+    ]

@@ -1,54 +1,124 @@
-{% extends "main.html" %} {% load static %} {% block content %}
-<main class="py-16 px-6 min-h-screen bg-base-200">
-  <div class="max-w-3xl mx-auto text-center">
-    <h1 class="text-4xl font-bold mb-4">Table Reservation</h1>
-    <p class="text-gray-500 mb-10">
-      Book your table easily and enjoy your meal at KFC.
-    </p>
+{% extends "main.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
 
-    <form class="grid gap-6 bg-base-100 p-8 rounded-xl shadow-md" method="POST">
-      {% csrf_token %} {{ form.non_field_errors }} {% if error %}
-      <p class="text-red-500 font-semibold mb-4">{{ error }}</p>
+<main class="py-16 md:px-6 px-3 min-h-screen bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold mb-2 text-gray-800">Reserve Your Table</h1>
+      <p class="text-gray-600">Select your favorite dishes and book a table easily at KFC.</p>
+    </div>
+
+    <!-- Reservation Form -->
+    <form method="POST" class="bg-white p-8 rounded-xl shadow-lg grid gap-6">
+      {% csrf_token %}
+      
+      <!-- Errors -->
+      {% if form.non_field_errors %}
+      <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+        {{ form.non_field_errors }}
+      </div>
+      {% endif %}
+      {% if error %}
+      <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded font-semibold">
+        {{ error }}
+      </div>
       {% endif %}
 
+      <!-- Personal Details -->
       <div class="grid md:grid-cols-2 gap-4">
-        <input
-          name="name"
-          type="text"
-          placeholder="Full Name"
-          class="input input-bordered w-full"
-          required
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Email Address"
-          class="input input-bordered w-full"
-          required
-        />
+        <div>
+          <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            Full Name <span class="text-red-500">*</span>
+          </label>
+          {{ form.name|add_class:"input input-bordered w-full"|attr:"placeholder:Enter your full name" }}
+        </div>
+        <div>
+          <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            Email Address <span class="text-red-500">*</span>
+          </label>
+          {{ form.email|add_class:"input input-bordered w-full"|attr:"placeholder:your@email.com" }}
+        </div>
       </div>
+
       <div class="grid md:grid-cols-2 gap-4">
-        <input
-          name="guest_phone_num"
-          type="tel"
-          placeholder="Number of Guests"
-          class="input input-bordered w-full"
-          required
-        />
-        <input
-          name="date"
-          type="datetime-local"
-          class="input input-bordered w-full"
-          required
-        />
+        <div>
+          <label for="{{ form.guest_phone_num.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            Phone Number <span class="text-red-500">*</span>
+          </label>
+          {{ form.guest_phone_num|add_class:"input input-bordered w-full"|attr:"placeholder:+1 (555) 000-0000" }}
+        </div>
+        <div>
+          <label for="{{ form.date.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            Reservation Date <span class="text-red-500">*</span>
+          </label>
+          {{ form.date|add_class:"input input-bordered w-full"|attr:"type:datetime-local" }}
+        </div>
       </div>
-      <textarea
-        name="message"
-        placeholder="Special Requests"
-        class="textarea textarea-bordered w-full"
-      ></textarea>
-      <button class="btn btn-primary w-full">Reserve Now</button>
+
+      <!-- Special Requests -->
+      <div>
+        <label for="{{ form.meassage.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+          Special Requests (Optional)
+        </label>
+        {{ form.meassage|add_class:"textarea textarea-bordered w-full"|attr:"placeholder:Any special requirements or dietary restrictions?"|attr:"rows:4" }}
+      </div>
+
+      <!-- Menu Selection (Scrollable + Total Price) -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">
+          Choose Menu Items <span class="text-sm font-normal text-gray-500">(Optional)</span>
+        </h3>
+        <p class="text-sm text-gray-600 mb-3">Pre-select items you'd like to order</p>
+        <div class="overflow-y-auto max-h-80 border border-gray-200 rounded p-2 grid gap-2">
+          {% for item in form.menu_items.field.queryset %}
+          <label class="flex items-center justify-between px-3 py-2 rounded hover:bg-gray-100 cursor-pointer">
+            <div class="flex items-center gap-3">
+              <input 
+                type="checkbox" 
+                name="menu_items" 
+                value="{{ item.id }}" 
+                class="menu-checkbox checkbox checkbox-primary"
+                data-price="{{ item.price }}"
+              />
+              <span class="font-semibold text-gray-800">{{ item.title }}</span>
+            </div>
+            <span class="text-red-600 font-bold">${{ item.price }}</span>
+          </label>
+          {% endfor %}
+        </div>
+        <div class="mt-2 text-right text-gray-700 font-semibold">
+          Total: $<span id="total-price">0.00</span>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary w-full mt-4 py-3 font-bold text-lg hover:bg-red-700 transition">
+        Reserve Now
+      </button>
     </form>
   </div>
 </main>
+
+<!-- JS for calculating total price -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('.menu-checkbox');
+  const totalEl = document.getElementById('total-price');
+
+  function updateTotal() {
+    let total = 0;
+    checkboxes.forEach(cb => {
+      if (cb.checked) total += parseFloat(cb.dataset.price);
+    });
+    totalEl.textContent = total.toFixed(2);
+  }
+
+  checkboxes.forEach(cb => cb.addEventListener('change', updateTotal));
+});
+</script>
+
 {% endblock %}

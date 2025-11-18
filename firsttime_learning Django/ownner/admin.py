@@ -2,7 +2,15 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Food, Order, Supply
+from .models import Food, Order, Supply, user
+
+
+@admin.register(user)
+class Useradmin(admin.ModelAdmin):
+    list_display = ("name", "email", "role")
+    search_fields = ("role", "name")
+    list_filter = ("name", "role")
+
 
 @admin.register(Food)
 class FoodAdmin(admin.ModelAdmin):

@@ -15,8 +15,8 @@ class Menu(models.Model):
 
     sample = models.ImageField(upload_to="sample/", blank=True, null=True)
     title = models.CharField(max_length=20)
-    discription = models.TextField
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    discription = models.TextField(null=True, blank=True, max_length=500)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     selection = models.CharField(max_length=10, choices=SELECTION, default="Foods")
     available = models.BooleanField(default=True)
     date_added = models.DateTimeField(auto_now_add=True)
@@ -28,9 +28,10 @@ class Menu(models.Model):
 class Reservation(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField()
     meassage = models.TextField(max_length=500, null=True, blank=True)
-    guest_phone_num = models.IntegerField(max_length=20)
+    guest_phone_num = models.IntegerField()
+    menu_items = models.ManyToManyField(Menu, blank=True)
 
     def __str__(self):
         return f"placed reservertion by {self.name} on {self.date}"
@@ -50,7 +51,6 @@ class GroupLink(models.Model):
 
 class Student(models.Model):
     name = models.CharField(max_length=100)
-    age = models.IntegerField(blank=True, null=True)
     email = models.EmailField()
     phone_number = models.CharField(max_length=15)
     registered_on = models.DateTimeField(auto_now_add=True)
@@ -67,3 +67,38 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.EmailField()
+    desc = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
+class GalleryItem(models.Model):
+    name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="gallery/")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
+class BlogDisplay(models.Model):
+    title = models.CharField(max_length=50)
+    sub_title = models.CharField(max_length=100, blank=True, null=True)
+    image = models.ImageField(upload_to="blogs/")
+    description = models.TextField(max_length=500, blank=True, null=True)
+    created_at = models.DateField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        # Auto-generate subtitle if none provided
+        if not self.sub_title:
+            self.sub_title = self.title[:20]
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.title} - {self.sub_title}"

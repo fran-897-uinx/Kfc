@@ -1,0 +1,12 @@
+# secret
+*.env
+# Python
+__pycache__/
+*.py[cod]
+
+# Django
+db.sqlite3
+env/
+/staticfiles/
+# Snyk Security Extension - AI Rules (auto-generated)
+.github\instructions\snyk_rules.instructions.md

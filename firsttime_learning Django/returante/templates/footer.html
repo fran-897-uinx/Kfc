@@ -53,8 +53,11 @@
   </nav>
   <aside>
     <p>
-      Copyright © {new Date().getFullYear()} - All right reserved by ACME
+      Copyright © <span id="date"></span> - All right reserved by ACME
       Industries Ltd
     </p>
   </aside>
 </footer>
+<script>
+  document.getElementById("date").textContent = new Date().getFullYear();
+</script>

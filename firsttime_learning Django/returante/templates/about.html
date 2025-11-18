@@ -1,36 +1,150 @@
 <!-- about.html -->
-
 {% extends "main.html" %}
 {% load static %}
 {% block content %}
-<main class="py-16 px-6 min-h-screen bg-base-200">
-  <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-4xl font-bold mb-6">About Us</h1>
-    <p class="text-gray-600 mb-10">
-      Welcome to KFC Nigeria — where crispy chicken meets world-class taste.  
-      Our mission is to deliver delicious meals, warm hospitality, and unforgettable experiences.
-    </p>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card bg-base-100 shadow-lg">
-        <div class="card-body">
-          <h2 class="card-title">🍗 Quality</h2>
-          <p>We use only the freshest ingredients to ensure the best flavors in every bite.</p>
-        </div>
+<main class="py-24 px-6 bg-base-200 min-h-screen">
+  <section class="max-w-6xl mx-auto">
+
+    <!-- Hero Section -->
+    <header class="text-center mb-20">
+      <h1 class="text-5xl font-extrabold tracking-tight">About Our Company</h1>
+      <p class="text-gray-600 mt-6 max-w-3xl mx-auto leading-relaxed">
+        We are a forward-thinking technology company dedicated to building scalable systems, exceptional digital experiences, 
+        and innovative solutions that empower businesses to thrive in a fast-changing world.
+      </p>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="bg-base-100 shadow-xl rounded-2xl p-12 mb-24">
+      <h2 class="text-3xl font-bold mb-6">Who We Are</h2>
+      <p class="text-gray-700 leading-relaxed text-lg">
+        Since our inception, we have operated with one clear mission: deliver world-class services built on quality, 
+        innovation, and integrity. We are driven by a team of highly skilled engineers, designers, product strategists, and 
+        technology experts who collaborate to build solutions that make a measurable impact.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed text-lg mt-4">
+        Our approach combines deep technical expertise with a strong understanding of modern business challenges. 
+        We believe that great products are built on clarity, performance, and user-driven design — values that shape 
+        everything we deliver.
+      </p>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="grid md:grid-cols-2 gap-12 mb-24">
+      <div class="bg-base-100 shadow-lg rounded-2xl p-10">
+        <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+        <p class="text-gray-600 leading-relaxed">
+          To create reliable, efficient, and future-ready solutions that solve real business problems and power sustainable growth.
+        </p>
       </div>
-      <div class="card bg-base-100 shadow-lg">
-        <div class="card-body">
-          <h2 class="card-title">👩‍🍳 Passion</h2>
-          <p>Our chefs are passionate about creating meals that bring smiles to every table.</p>
-        </div>
+
+      <div class="bg-base-100 shadow-lg rounded-2xl p-10">
+        <h3 class="text-2xl font-semibold mb-4">Our Vision</h3>
+        <p class="text-gray-600 leading-relaxed">
+          To be a global leader in technology innovation, recognized for excellence, trust, and an unwavering commitment to quality.
+        </p>
       </div>
-      <div class="card bg-base-100 shadow-lg">
-        <div class="card-body">
-          <h2 class="card-title">🌍 Community</h2>
-          <p>We believe in giving back to the communities we serve, one meal at a time.</p>
+    </section>
+
+    <!-- Values Section -->
+    <section class="mb-24">
+      <h2 class="text-4xl font-bold text-center mb-14">Our Core Values</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="bg-base-100 rounded-2xl p-10 shadow-md hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-3">Engineering Excellence</h4>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            We uphold world-class engineering standards and continuously improve our processes, technologies, and solutions.
+          </p>
         </div>
+
+        <div class="bg-base-100 rounded-2xl p-10 shadow-md hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-3">Innovation</h4>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Our team embraces modern tools and approaches, exploring new ideas to build high-impact products.
+          </p>
+        </div>
+
+        <div class="bg-base-100 rounded-2xl p-10 shadow-md hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-3">Integrity</h4>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            We operate with transparency, honesty, and responsibility. Trust is the foundation of everything we do.
+          </p>
+        </div>
+
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="mb-24">
+      <h2 class="text-4xl font-bold text-center mb-14">Why Companies Trust Us</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="bg-base-100 rounded-2xl p-10 shadow-lg hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-3">Proven Expertise</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            With years of experience across sectors, our team understands challenges, patterns, and opportunities.
+          </p>
+        </div>
+
+        <div class="bg-base-100 rounded-2xl p-10 shadow-lg hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-3">Scalable Solutions</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We build systems that grow with your business — optimized for security, performance, and long-term stability.
+          </p>
+        </div>
+
+        <div class="bg-base-100 rounded-2xl p-10 shadow-lg hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-3">Customer-Centric Approach</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Every product and service we deliver is designed with the end-user in mind, ensuring maximum impact.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Company Timeline -->
+    <section class="mb-24">
+      <h2 class="text-4xl font-bold text-center mb-14">Our Journey</h2>
+      <div class="space-y-12">
+
+        <div class="bg-base-100 p-2">
+          <h4 class="text-xl font-semibold mb-2">Founded</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Our company was established with the goal of creating technology solutions that challenge the status quo.
+          </p>
+        </div>
+
+        <div class="bg-base-100 p-2">
+          <h4 class="text-xl font-semibold mb-2">Expansion</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We extended our services into new markets while growing our team of global experts.
+          </p>
+        </div>
+
+        <div class="bg-base-100 p-2">
+          <h4 class="text-xl font-semibold mb-2">Today</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We continue to evolve — adopting cutting-edge technology and delivering value to businesses worldwide.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Final Commitment Section -->
+    <section class="bg-base-100 rounded-2xl p-5">
+      <h2 class="text-3xl font-bold mb-4">Our Commitment</h2>
+      <p class="text-gray-700 leading-relaxed text-lg">
+        We are dedicated to delivering results that matter. By maintaining high standards, embracing innovation, and staying 
+        committed to our clients, we continue to build solutions that move businesses forward.
+      </p>
+    </section>
+
+  </section>
 </main>
+
 {% endblock %}

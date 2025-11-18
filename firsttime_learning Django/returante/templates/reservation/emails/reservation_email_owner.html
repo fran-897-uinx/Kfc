@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>New Reservation</title>
+</head>
+<body style="font-family: Arial, sans-serif; background:#eef2f3; padding:20px;">
+  <table width="100%">
+    <tr>
+      <td align="center">
+        <table width="600" style="background:white; border-radius:10px; padding:30px;">
+          <tr>
+            <td>
+              <h2 style="color:#222; margin-block-start:0;">📩 New Reservation Received</h2>
+
+              <p style="font-size:14px; color:#444;">
+                A new table reservation has been submitted. Review details below:
+              </p>
+
+              <h3 style="color:#d82b38; margin-block-start:20px;">Reservation Info:</h3>
+              <p style="font-size:14px; color:#222; line-height:1.6;">
+                <strong>Name:</strong> {{ reservation.name }}<br>
+                <strong>Email:</strong> {{ reservation.email }}<br>
+                <strong>Phone:</strong> {{ reservation.guest_phone_num }}<br>
+                <strong>Date:</strong> {{ reservation.date }}<br>
+                <strong>Message:</strong> {{ reservation.meassage }}<br>
+                <strong>Menu Items Selected:</strong> {{ menu_items.count }}
+              </p>
+
+              {% if menu_items %}
+              <h3 style="color:#d82b38; margin-block-start:15px;">Selected Menu Items:</h3>
+              <ul style="font-size:14px; color:#222; line-height:1.6; padding-inline-start:20px;">
+                {% for item in menu_items %}
+                  <li>{{ item.title }} - ${{ item.price }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              <p style="margin-block-start:25px; color:#555; font-size:13px;">
+                📌 Please follow up with the customer as soon as possible.
+              </p>
+
+              <p style="font-size:13px; color:#333; margin-block-start:20px;">
+                - Reservation System Bot
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding-block-start:30px;">
+              <small style="color:#777;">Internal notification email. Do not forward.</small>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

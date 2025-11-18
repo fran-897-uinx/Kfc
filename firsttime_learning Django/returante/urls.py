@@ -9,10 +9,11 @@ urlpatterns = [
     path("gallery/", views.gallery, name="gallery"),
     path("about/", views.about, name="about"),
     path("contact/", views.contact, name="contact"),
-    path("menu/<int:id>", views.menu, name="menu"),
+    path("menu", views.menu, name="menu"),
     path("Registeration/", views.student_registration, name="student"),
     path("reservation", views.reservation_view, name="reservation"),
     path("", include("rest_framework.urls", namespace="rest_framework")),
+    path("blog/<int:pk>/", views.blog_details, name="blog_details"),
     path(
         "student/success/",
         lambda request: render(

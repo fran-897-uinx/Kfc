@@ -1,0 +1,108 @@
+{% extends "ownner.html" %} {% load static %} {% load tailwind_tags %} {%
+tailwind_css %} {% block content %}
+
+<section
+  class="min-h-screen flex items-center justify-center md:px-6 px-3 py-20 bg-gradient-to-br from-gray-50 to-gray-200"
+>
+  <div
+    class="w-full max-w-xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/30 rounded-3xl p-10 animate-fadeIn"
+  >
+    <h1
+      class="text-3xl font-extrabold text-gray-800 text-center mb-6 tracking-wide"
+    >
+      Upload Blog
+    </h1>
+    <p class="text-gray-600 text-center mb-10 text-sm">
+      Add a new dish to your restaurant Blog . Customers will see it instantly
+      on the website.
+    </p>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-6">
+      {% csrf_token %}
+
+      <!-- Title Field -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Blog Title</label>
+        <input
+          type="text"
+          name="title"
+          placeholder="e.g. Spicy Chicken Mix"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 shadow-sm focus:ring-2 focus:ring-red-500 focus:outline-none transition"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2"
+          >Blog Sub Title</label
+        >
+        <input
+          type="text"
+          name="subtitle"
+          placeholder="e.g. Chicken Mix"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 shadow-sm focus:ring-2 focus:ring-red-500 focus:outline-none transition"
+          required
+        />
+      </div>
+
+      <!-- File Upload -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2"
+          >Upload Image</label
+        >
+
+        <div
+          class="w-full file-input file-input-bordered rounded-xl bg-white shadow-sm border-gray-300"
+        >
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            class="file-input w-full"
+            required
+          />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2"
+          >Blog Description</label
+        >
+        <textarea
+          name="description"
+          id=""
+          placeholder="e.g. Spicy Chicken Mix is one of the best ..........."
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 shadow-sm focus:ring-2 focus:ring-red-500 focus:outline-none transition"
+          required
+          cols="5"
+          rows="5"
+        >
+        </textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-lg shadow-lg transition transform hover:-translate-y-1"
+      >
+        Upload Blog Now
+      </button>
+    </form>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out;
+  }
+</style>
+
+{% endblock %}

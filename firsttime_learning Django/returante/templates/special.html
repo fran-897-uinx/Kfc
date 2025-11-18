@@ -4,7 +4,7 @@
     font-size: x-small;
   }
 </style>
-<main class="py-2 md:px-25 h-auto gap-7 justify-center flex flex-col-reverse  px-5 md:flex-row">
+<main class="py-2 md:px-25 h-auto gap-7 justify-center flex flex-col-reverse  px-3 md:flex-row">
   <div class="md:w-lg  w-full h-120">
     <img src="{% static 'imgs/peppers.jpg' %}" alt="" class="h-full w-full scale-100" />
   </div>
@@ -117,7 +117,8 @@
       </div>
 
       <button type="button" class="p-1 text-md font-light bg-orange-700 w-24 cursor-pointer">
-        order now
+        <a href="{% url 'reservation' %}" class=" text-gray-900 p-1 text-md font-light"> order now</a>
+       
       </button>
     </section>
   </div>

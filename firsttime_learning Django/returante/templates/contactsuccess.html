@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<main class="min-h-screen bg-base-200 flex items-center justify-center px-6">
+  <div class="bg-base-100 shadow-xl rounded-2xl p-10 text-center max-w-md w-full">
+    <div class="text-green-500 mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2l4-4m5 2a9 9 0 11-18 0a9 9 0 0118 0z" />
+      </svg>
+    </div>
+    
+    <h1 class="text-2xl font-bold mb-3"> Message Sent Successful 🎉</h1>
+
+    {% if message %}
+      <p class="text-red-500 font-semibold mb-4">{{ message }}</p>
+    {% endif %}
+
+    <p class="text-gray-500 mb-6">
+      Thank you for your Message.<br>
+      We’ve sent a confirmation email to your inbox.
+    </p>
+
+    <div class="flex flex-col gap-3">
+      <a href="{% url 'home' %}" class="btn btn-primary w-full">🏠 Go Back Home</a>
+    </div>
+  </div>
+</main>
+{% endblock %}

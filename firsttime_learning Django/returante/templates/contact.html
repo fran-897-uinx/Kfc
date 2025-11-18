@@ -10,11 +10,11 @@
   </div>
 
   <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto my-auto">
-    {% csrf_token %}
     <form class="bg-base-100 p-8 rounded-xl shadow-md" method="POST">
+      {% csrf_token %}
       <div class="grid gap-4 mx-auto">
         <input
-          name="name"
+          name="name" 
           type="text"
           placeholder="Your Name"
           class="input input-bordered w-full"
@@ -47,7 +47,7 @@
       <p class="mb-2">📧 info@kfc.com</p>
       <iframe
         class="rounded-lg mt-4 w-full h-64"
-        src="https://maps.google.com/maps?q=lagos%20nigeria&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=nnewi%20nigeria&t=&z=13&ie=UTF8&iwloc=&output=embed"
       ></iframe>
     </div>
   </div>

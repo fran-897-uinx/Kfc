@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
+from dotenv import load_dotenv
 from pathlib import Path
+import dj_database_url
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-rcbjmv9dn9rm5a_k0p(7r1qd@5bg*pt(7nwtdw_c$&lhtq_u_2"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = []
 TAILWIND_APP_NAME = "theme"
@@ -48,10 +53,12 @@ INSTALLED_APPS = [
     "tailwind",
     "crispy_forms",
     "crispy_tailwind",
+    "widget_tweaks",
     "django_browser_reload",
     "theme",
     "returante",
     "ownner",
+    "dotenv",
 ]
 
 MIDDLEWARE = [
@@ -96,6 +103,42 @@ DATABASES = {
     }
 }
 
+DB_USERNAME = os.getenv("POSTGRES_USR")
+DB_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+DB_DATABASE = os.getenv("POSTGRES_DB")
+DB_HOST = os.getenv("POSTGRES_HOST")
+DB_PORT = os.getenv("POSTGRES_PORT")
+
+DB_CONF = all([DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_HOST, DB_PORT])
+
+POSTGRES_READY = str(os.getenv("POSTGRES_READY")) == "True"
+
+if DB_CONF and POSTGRES_READY:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": DB_DATABASE,
+            "USER": DB_USERNAME,
+            "PASSWORD": DB_PASSWORD,
+            "HOST": DB_HOST,
+            "PORT": DB_PORT,
+            "OPTIONS": {
+                "connect_timeout": 5,
+                "sslmode": "require",
+            },
+        }
+    }
+else:
+    print("Using Sqlite as the database backend.")
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
+print(DATABASES)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -131,7 +174,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -146,20 +196,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #     'PAGE_SIZE': 10,
 # }
 
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"  # For Gmail. Use your email provider's SMTP server for other services
-EMAIL_PORT = 587  # Common ports: 587 (TLS), 465 (SSL)
-EMAIL_USE_TLS = (
-    True  # Set to True for TLS, False for SSL (or EMAIL_USE_SSL = True for SSL)
-)
-EMAIL_HOST_USER = "prevailfrancis@gmail.com"
-EMAIL_HOST_PASSWORD = (
-    "tjxs djad sjwu nubq"  # Use an app-specific password if using services like Gmail
-)
-DEFAULT_FROM_EMAIL = (
-   "no-reply@kfc.com"  # Email address used if no 'from_email' is specified
-)
+EMAIL_BACKEND = os.getenv("EMAIL_BACKEND")
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"

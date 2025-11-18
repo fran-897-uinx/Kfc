@@ -17,57 +17,40 @@
           />
         </svg>
       </div>
+       
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow-xl"
       >
+      <a class="btn btn-ghost md:hidden font-bold text-shadow-white text-2xl text-start">KFC</a>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'reservation' %}">Reservation</a></li>
         <li><a href="{% url 'gallery' %}">Gallery</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'blog' %}">Blog</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
-
-        {% if request.user.is_authenticated and request.user.is_staff %}
-          <li><a href="{% url 'users_record' %}" class="btn block md:hidden pt-2">Admin Dashboard</a></li>
-        {% endif %}
+        <li><a href="{% url 'menu' %}">menu</a></li>
       </ul>
     </div>
-    <a class="btn btn-ghost text-4xl font-bold text-shadow-white">KFC</a>
+    <a class="btn btn-ghost md:text-4xl font-bold text-shadow-white md:block">KFC</a>
   </div>
 
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 font-bold text-gray-700">
+    <ul class="menu menu-horizontal px-1 font-bold ">
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'reservation' %}">Reservation</a></li>
       <li><a href="{% url 'gallery' %}">Gallery</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
       <li><a href="{% url 'blog' %}">Blog</a></li>
       <li><a href="{% url 'contact' %}">Contact</a></li>
+      <li><a href="{% url 'menu' %}">menu</a></li>
     </ul>
   </div>
 
-  <div class="navbar-end gap-3">
-    {% if request.user.is_authenticated and request.user.is_staff %}
-      <a href="{% url 'users_record' %}" class="btn hidden md:block pt-2">Admin Dashboard</a>
-    {% endif %}
-
-    {% if user.is_authenticated and user.student %}
-      <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-ghost font-semibold text-gray-700">
-          👋 Hi, {{ user.student.name|default:user.username }}
-        </label>
-        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44">
-          <li><a href="{% url 'student_profile' %}">View Profile</a></li>
-          <li><a href="{% url 'logout' %}">Logout</a></li>
-        </ul>
-      </div>
-    {% else %}
-      <a class="btn btn-primary" href="{% url 'student' %}">
-        Register As A Student
+  <div class="navbar-end gap-3 ">
+      <a class="btn bg-gradient-to-r from-2% bg-gray-300 to-0% hover:scale-102" href="{% url 'student' %}">
+        Be one of our Student
       </a>
-    {% endif %}
-
     <input
       type="checkbox"
       value="dark"
