@@ -1,5 +1,21 @@
 [
     {
+        "label": "BaseCommand",
+        "importPath": "django.core.management.base",
+        "description": "django.core.management.base",
+        "isExtraImport": true,
+        "detail": "django.core.management.base",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -25,11 +41,45 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "dj_database_url",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dj_database_url",
+        "description": "dj_database_url",
+        "detail": "dj_database_url",
         "documentation": {}
     },
     {
@@ -410,6 +460,78 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -514,7 +636,31 @@
         "documentation": {}
     },
     {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "GalleryItem",
+        "importPath": "returante.models",
+        "description": "returante.models",
+        "isExtraImport": true,
+        "detail": "returante.models",
+        "documentation": {}
+    },
+    {
+        "label": "BlogDisplay",
+        "importPath": "returante.models",
+        "description": "returante.models",
+        "isExtraImport": true,
+        "detail": "returante.models",
+        "documentation": {}
+    },
+    {
+        "label": "Menu",
         "importPath": "returante.models",
         "description": "returante.models",
         "isExtraImport": true,
@@ -620,6 +766,40 @@
         "documentation": {}
     },
     {
+        "label": "serve",
+        "importPath": "waitress",
+        "description": "waitress",
+        "isExtraImport": true,
+        "detail": "waitress",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "importPath": "kyc.wsgi",
+        "description": "kyc.wsgi",
+        "isExtraImport": true,
+        "detail": "kyc.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Command",
+        "kind": 6,
+        "importPath": "core.management.commands.createuser",
+        "description": "core.management.commands.createuser",
+        "peekOfCode": "class Command(BaseCommand):\n    help = 'Create superuser from environment variables'\n    def handle(self, *args, **options):\n        username = os.getenv('DJANGO_SUPERUSER_USERNAME')\n        email = os.getenv('DJANGO_SUPERUSER_EMAIL')\n        password = os.getenv('DJANGO_SUPERUSER_PASSWORD')\n        if not User.objects.filter(username=username).exists():\n            User.objects.create_superuser(username=username, email=email, password=password)\n            self.stdout.write(self.style.SUCCESS(f'Superuser \"{username}\" created successfully!'))\n        else:",
+        "detail": "core.management.commands.createuser",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 5,
+        "importPath": "core.management.commands.createuser",
+        "description": "core.management.commands.createuser",
+        "peekOfCode": "User = get_user_model()\nclass Command(BaseCommand):\n    help = 'Create superuser from environment variables'\n    def handle(self, *args, **options):\n        username = os.getenv('DJANGO_SUPERUSER_USERNAME')\n        email = os.getenv('DJANGO_SUPERUSER_EMAIL')\n        password = os.getenv('DJANGO_SUPERUSER_PASSWORD')\n        if not User.objects.filter(username=username).exists():\n            User.objects.create_superuser(username=username, email=email, password=password)\n            self.stdout.write(self.style.SUCCESS(f'Superuser \"{username}\" created successfully!'))",
+        "detail": "core.management.commands.createuser",
+        "documentation": {}
+    },
+    {
         "label": "application",
         "kind": 5,
         "importPath": "kyc.asgi",
@@ -633,7 +813,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = os.getenv(\"DEBUG\")\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = str(os.getenv(\"DEBUG\")) == \"False\"\nALLOWED_HOSTS = os.environ.get(\"ALLOWED_HOSTS\", \"\").split(\",\")\n# Custom Admin URL\nADMIN_URL = os.environ.get(\"ADMIN_URL\", \"admin/\")",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -642,7 +822,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "SECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = os.getenv(\"DEBUG\")\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition",
+        "peekOfCode": "SECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = str(os.getenv(\"DEBUG\")) == \"False\"\nALLOWED_HOSTS = os.environ.get(\"ALLOWED_HOSTS\", \"\").split(\",\")\n# Custom Admin URL\nADMIN_URL = os.environ.get(\"ADMIN_URL\", \"admin/\")\n# Custom Domain\nDOMAIN = os.environ.get(\"DOMAIN\", \"\")\n# Optional Region\nREGION = os.environ.get(\"REGION\", \"\")",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -651,7 +831,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "DEBUG = os.getenv(\"DEBUG\")\nALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
+        "peekOfCode": "DEBUG = str(os.getenv(\"DEBUG\")) == \"False\"\nALLOWED_HOSTS = os.environ.get(\"ALLOWED_HOSTS\", \"\").split(\",\")\n# Custom Admin URL\nADMIN_URL = os.environ.get(\"ADMIN_URL\", \"admin/\")\n# Custom Domain\nDOMAIN = os.environ.get(\"DOMAIN\", \"\")\n# Optional Region\nREGION = os.environ.get(\"REGION\", \"\")\n# Example\nprint(\"Loaded region:\", REGION)",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -660,7 +840,34 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",",
+        "peekOfCode": "ALLOWED_HOSTS = os.environ.get(\"ALLOWED_HOSTS\", \"\").split(\",\")\n# Custom Admin URL\nADMIN_URL = os.environ.get(\"ADMIN_URL\", \"admin/\")\n# Custom Domain\nDOMAIN = os.environ.get(\"DOMAIN\", \"\")\n# Optional Region\nREGION = os.environ.get(\"REGION\", \"\")\n# Example\nprint(\"Loaded region:\", REGION)\nTAILWIND_APP_NAME = \"theme\"",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ADMIN_URL",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "ADMIN_URL = os.environ.get(\"ADMIN_URL\", \"admin/\")\n# Custom Domain\nDOMAIN = os.environ.get(\"DOMAIN\", \"\")\n# Optional Region\nREGION = os.environ.get(\"REGION\", \"\")\n# Example\nprint(\"Loaded region:\", REGION)\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\"127.0.0.1\", \"172.30.0.1\", \"10.0.0.9\"]",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DOMAIN",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "DOMAIN = os.environ.get(\"DOMAIN\", \"\")\n# Optional Region\nREGION = os.environ.get(\"REGION\", \"\")\n# Example\nprint(\"Loaded region:\", REGION)\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\"127.0.0.1\", \"172.30.0.1\", \"10.0.0.9\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get(\"RENDER_EXTERNAL_HOSTNAME\")\nif RENDER_EXTERNAL_HOSTNAME:",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REGION",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "REGION = os.environ.get(\"REGION\", \"\")\n# Example\nprint(\"Loaded region:\", REGION)\nTAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\"127.0.0.1\", \"172.30.0.1\", \"10.0.0.9\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get(\"RENDER_EXTERNAL_HOSTNAME\")\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\nif os.environ.get(\"DOMAIN\"):",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -669,7 +876,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "TAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
+        "peekOfCode": "TAILWIND_APP_NAME = \"theme\"\nNPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\"127.0.0.1\", \"172.30.0.1\", \"10.0.0.9\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get(\"RENDER_EXTERNAL_HOSTNAME\")\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\nif os.environ.get(\"DOMAIN\"):\n    ALLOWED_HOSTS.append(os.environ.get(\"DOMAIN\"))\n# Application definition\nINSTALLED_APPS = [",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -678,7 +885,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "NPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "NPM_BIN_PATH = \"C:/Program Files/nodejs/npm.cmd\"\nINTERNAL_IPS = [\"127.0.0.1\", \"172.30.0.1\", \"10.0.0.9\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get(\"RENDER_EXTERNAL_HOSTNAME\")\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\nif os.environ.get(\"DOMAIN\"):\n    ALLOWED_HOSTS.append(os.environ.get(\"DOMAIN\"))\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -687,7 +894,16 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "INTERNAL_IPS = [\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",",
+        "peekOfCode": "INTERNAL_IPS = [\"127.0.0.1\", \"172.30.0.1\", \"10.0.0.9\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get(\"RENDER_EXTERNAL_HOSTNAME\")\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\nif os.environ.get(\"DOMAIN\"):\n    ALLOWED_HOSTS.append(os.environ.get(\"DOMAIN\"))\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "RENDER_EXTERNAL_HOSTNAME",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "RENDER_EXTERNAL_HOSTNAME = os.environ.get(\"RENDER_EXTERNAL_HOSTNAME\")\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\nif os.environ.get(\"DOMAIN\"):\n    ALLOWED_HOSTS.append(os.environ.get(\"DOMAIN\"))\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -705,7 +921,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    \"django.middleware.security.SecurityMiddleware\",\n    \"django.contrib.sessions.middleware.SessionMiddleware\",\n    \"django_browser_reload.middleware.BrowserReloadMiddleware\",\n    \"django.middleware.common.CommonMiddleware\",\n    \"django.middleware.csrf.CsrfViewMiddleware\",\n    \"django.contrib.auth.middleware.AuthenticationMiddleware\",\n    \"django.contrib.messages.middleware.MessageMiddleware\",\n    \"django.middleware.clickjacking.XFrameOptionsMiddleware\",\n]",
+        "peekOfCode": "MIDDLEWARE = [\n    \"django.middleware.security.SecurityMiddleware\",\n    \"whitenoise.middleware.WhiteNoiseMiddleware\",\n    \"django.contrib.sessions.middleware.SessionMiddleware\",\n    \"django_browser_reload.middleware.BrowserReloadMiddleware\",\n    \"django.middleware.common.CommonMiddleware\",\n    \"django.middleware.csrf.CsrfViewMiddleware\",\n    \"django.contrib.auth.middleware.AuthenticationMiddleware\",\n    \"django.contrib.messages.middleware.MessageMiddleware\",\n    \"django.middleware.clickjacking.XFrameOptionsMiddleware\",",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -732,7 +948,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "WSGI_APPLICATION = \"kyc.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/5.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Password validation",
+        "peekOfCode": "WSGI_APPLICATION = \"kyc.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/5.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Always try DATABASE_URL first",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -741,7 +957,16 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Always try DATABASE_URL first\nDATABASE_URL = os.getenv(\"DATABASE_URL\")\nif DATABASE_URL:\n    DATABASES = {",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_URL",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "DATABASE_URL = os.getenv(\"DATABASE_URL\")\nif DATABASE_URL:\n    DATABASES = {\n        \"default\": dj_database_url.parse(\n            DATABASE_URL,\n            conn_max_age=600,\n            ssl_require=True,\n        )\n    }\nelse:",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -795,7 +1020,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -804,7 +1029,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -813,7 +1038,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\"),\n]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -822,7 +1047,7 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -831,7 +1056,16 @@
         "kind": 5,
         "importPath": "kyc.settings",
         "description": "kyc.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,\n# }",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,",
+        "detail": "kyc.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_STORAGE",
+        "kind": 5,
+        "importPath": "kyc.settings",
+        "description": "kyc.settings",
+        "peekOfCode": "STATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# REST_FRAMEWORK = {\n#     # Use Django's standard `django.contrib.auth` permissions,\n#     # or allow read-only access for unauthenticated users.\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10,\n# }",
         "detail": "kyc.settings",
         "documentation": {}
     },
@@ -941,6 +1175,33 @@
         "description": "kyc.urls",
         "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"__reload__/\", include(\"django_browser_reload.urls\")),\n    path(\"\", include(\"returante.urls\")),\n    path(\"ownner/users_record/\", include(\"ownner.urls\"), name=\"ownner\"),\n    path('', include(router.urls)),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "kyc.urls",
+        "documentation": {}
+    },
+    {
+        "label": "CURRENT_DIR",
+        "kind": 5,
+        "importPath": "kyc.wsgi",
+        "description": "kyc.wsgi",
+        "peekOfCode": "CURRENT_DIR = pathlib.Path(__file__).resolve().parent\nBASE_DIR = CURRENT_DIR.parent\nENV_FILE_PATH = BASE_DIR / \".env\"\nload_dotenv(str(ENV_FILE_PATH))\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kyc.settings')\napplication = get_wsgi_application()",
+        "detail": "kyc.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "kyc.wsgi",
+        "description": "kyc.wsgi",
+        "peekOfCode": "BASE_DIR = CURRENT_DIR.parent\nENV_FILE_PATH = BASE_DIR / \".env\"\nload_dotenv(str(ENV_FILE_PATH))\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kyc.settings')\napplication = get_wsgi_application()",
+        "detail": "kyc.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "ENV_FILE_PATH",
+        "kind": 5,
+        "importPath": "kyc.wsgi",
+        "description": "kyc.wsgi",
+        "peekOfCode": "ENV_FILE_PATH = BASE_DIR / \".env\"\nload_dotenv(str(ENV_FILE_PATH))\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kyc.settings')\napplication = get_wsgi_application()",
+        "detail": "kyc.wsgi",
         "documentation": {}
     },
     {
@@ -1056,7 +1317,7 @@
         "kind": 5,
         "importPath": "ownner.urls",
         "description": "ownner.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.users_record, name=\"users_record\"),\n    path(\"ordered_record/\", views.ordered_record, name=\"ordered_record\"),\n    path(\"pending_record/\", views.pending_record, name=\"pending_record\"),\n    path(\"failed_record/\", views.failed_record, name=\"failed_record\"), \n    path(\"upload-gallery/\", views.upload_gallery, name=\"upload_gallery\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.users_record, name=\"users_record\"),\n    path(\"ordered_record/\", views.ordered_record, name=\"ordered_record\"),\n    path(\"pending_record/\", views.pending_record, name=\"pending_record\"),\n    path(\"failed_record/\", views.failed_record, name=\"failed_record\"),\n    path(\"upload-gallery/\", views.upload_gallery, name=\"upload_gallery\"),\n    path(\"upload_blog/\", views.upload_blog, name=\"upload_blog\"),\n    path(\"upload_menu/\", views.upload_menu, name=\"upload_menu\"),\n]",
         "detail": "ownner.urls",
         "documentation": {}
     },
@@ -1101,7 +1362,25 @@
         "kind": 2,
         "importPath": "ownner.views",
         "description": "ownner.views",
-        "peekOfCode": "def upload_gallery(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        image = request.FILES.get(\"image\")\n        if name and image:\n            GalleryItem.objects.create(name=name, image=image)\n        return redirect(\"gallery\")\n    return render(request, \"upload_gallery.html\")",
+        "peekOfCode": "def upload_gallery(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        image = request.FILES.get(\"image\")\n        if name and image:\n            GalleryItem.objects.create(name=name, image=image)\n        return redirect(\"gallery\")\n    return render(request, \"upload_gallery.html\")\ndef upload_blog(request):\n    if request.method == \"POST\":",
+        "detail": "ownner.views",
+        "documentation": {}
+    },
+    {
+        "label": "upload_blog",
+        "kind": 2,
+        "importPath": "ownner.views",
+        "description": "ownner.views",
+        "peekOfCode": "def upload_blog(request):\n    if request.method == \"POST\":\n        title = request.POST.get(\"title\")\n        sub_title = request.POST.get(\"subtitle\")\n        image = request.FILES.get(\"image\")\n        description = request.POST.get(\"description\")\n        if title and description and image:\n            BlogDisplay.objects.create(\n                title=title, image=image, description=description, sub_title=sub_title\n            )",
+        "detail": "ownner.views",
+        "documentation": {}
+    },
+    {
+        "label": "upload_menu",
+        "kind": 2,
+        "importPath": "ownner.views",
+        "description": "ownner.views",
+        "peekOfCode": "def upload_menu(request):\n    if request.method == \"POST\":\n        title = request.POST.get(\"title\")\n        discription = request.POST.get(\"discription\")\n        price = request.POST.get(\"price\")\n        sample = request.FILES.get(\"image\")\n        selection = request.POST.get(\"selection\")\n        if title and discription and sample and price and selection:\n            Menu.objects.create(\n                title=title,",
         "detail": "ownner.views",
         "documentation": {}
     },
@@ -1214,6 +1493,51 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0013_blogdisplay",
+        "description": "returante.migrations.0013_blogdisplay",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0012_galleryitem'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='BlogDisplay',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=50)),",
+        "detail": "returante.migrations.0013_blogdisplay",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0014_alter_blogdisplay_sub_title",
+        "description": "returante.migrations.0014_alter_blogdisplay_sub_title",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0013_blogdisplay'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='blogdisplay',\n            name='sub_title',\n            field=models.CharField(blank=True, max_length=100, null=True),\n        ),",
+        "detail": "returante.migrations.0014_alter_blogdisplay_sub_title",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0015_menu_discription",
+        "description": "returante.migrations.0015_menu_discription",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0014_alter_blogdisplay_sub_title'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='menu',\n            name='discription',\n            field=models.TextField(blank=True, max_length=500, null=True),\n        ),",
+        "detail": "returante.migrations.0015_menu_discription",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0016_reservation_menu_items_alter_menu_price_and_more",
+        "description": "returante.migrations.0016_reservation_menu_items_alter_menu_price_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0015_menu_discription'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='reservation',\n            name='menu_items',\n            field=models.ManyToManyField(blank=True, to='returante.menu'),\n        ),",
+        "detail": "returante.migrations.0016_reservation_menu_items_alter_menu_price_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "returante.migrations.0017_remove_student_age",
+        "description": "returante.migrations.0017_remove_student_age",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('returante', '0016_reservation_menu_items_alter_menu_price_and_more'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='student',\n            name='age',\n        ),\n    ]",
+        "detail": "returante.migrations.0017_remove_student_age",
+        "documentation": {}
+    },
+    {
         "label": "MenuAdmin",
         "kind": 6,
         "importPath": "returante.admin",
@@ -1254,7 +1578,25 @@
         "kind": 6,
         "importPath": "returante.admin",
         "description": "returante.admin",
-        "peekOfCode": "class ContactAdmin(admin.ModelAdmin):\n    list_display = (\"name\", \"email\")",
+        "peekOfCode": "class ContactAdmin(admin.ModelAdmin):\n    list_display = (\"name\", \"email\")\n@admin.register(GalleryItem)\nclass GalleryItemAdmin(admin.ModelAdmin):\n    list_display = [\"name\"]\n@admin.register(BlogDisplay)\nclass BlogDisplayAdmin(admin.ModelAdmin):\n    list_display = [\n        \"title\",\n        \"sub_title\",",
+        "detail": "returante.admin",
+        "documentation": {}
+    },
+    {
+        "label": "GalleryItemAdmin",
+        "kind": 6,
+        "importPath": "returante.admin",
+        "description": "returante.admin",
+        "peekOfCode": "class GalleryItemAdmin(admin.ModelAdmin):\n    list_display = [\"name\"]\n@admin.register(BlogDisplay)\nclass BlogDisplayAdmin(admin.ModelAdmin):\n    list_display = [\n        \"title\",\n        \"sub_title\",\n    ]",
+        "detail": "returante.admin",
+        "documentation": {}
+    },
+    {
+        "label": "BlogDisplayAdmin",
+        "kind": 6,
+        "importPath": "returante.admin",
+        "description": "returante.admin",
+        "peekOfCode": "class BlogDisplayAdmin(admin.ModelAdmin):\n    list_display = [\n        \"title\",\n        \"sub_title\",\n    ]",
         "detail": "returante.admin",
         "documentation": {}
     },
@@ -1272,7 +1614,7 @@
         "kind": 6,
         "importPath": "returante.forms",
         "description": "returante.forms",
-        "peekOfCode": "class StudentForm(forms.ModelForm):\n    class Meta:\n        model = Student\n        fields = ['name', 'age', 'email', 'phone_number', 'reason']\n        widgets = {\n            'name': forms.TextInput(attrs={\n                'class': 'input input-bordered w-full',\n                'placeholder': 'Enter your full name',\n            }),\n            'age': forms.NumberInput(attrs={",
+        "peekOfCode": "class StudentForm(forms.ModelForm):\n    class Meta:\n        model = Student\n        fields = [\"name\", \"email\", \"phone_number\", \"reason\"]\n        widgets = {\n            \"name\": forms.TextInput(\n                attrs={\n                    \"class\": \"input input-bordered w-full\",\n                    \"placeholder\": \"Enter your full name\",\n                }",
         "detail": "returante.forms",
         "documentation": {}
     },
@@ -1286,11 +1628,20 @@
         "documentation": {}
     },
     {
+        "label": "ReservationForm",
+        "kind": 6,
+        "importPath": "returante.forms",
+        "description": "returante.forms",
+        "peekOfCode": "class ReservationForm(forms.ModelForm):\n    menu_items = forms.ModelMultipleChoiceField(\n        queryset=Menu.objects.all(),\n        widget=forms.CheckboxSelectMultiple,  # or use SelectMultiple\n        required=False,\n        label=\"Select Menu Items\",\n    )\n    class Meta:\n        model = Reservation\n        fields = [\"name\", \"email\", \"guest_phone_num\", \"date\", \"meassage\", \"menu_items\"]",
+        "detail": "returante.forms",
+        "documentation": {}
+    },
+    {
         "label": "Menu",
         "kind": 6,
         "importPath": "returante.models",
         "description": "returante.models",
-        "peekOfCode": "class Menu(models.Model):\n    SELECTION = [\n        (\"food\", \"Food\"),\n        (\"drink\", \"Drink\"),\n        (\"snack\", \"Snack\"),\n    ]\n    sample = models.ImageField(upload_to=\"sample/\", blank=True, null=True)\n    title = models.CharField(max_length=20)\n    discription = models.TextField\n    price = models.DecimalField(max_digits=6, decimal_places=2)",
+        "peekOfCode": "class Menu(models.Model):\n    SELECTION = [\n        (\"food\", \"Food\"),\n        (\"drink\", \"Drink\"),\n        (\"snack\", \"Snack\"),\n    ]\n    sample = models.ImageField(upload_to=\"sample/\", blank=True, null=True)\n    title = models.CharField(max_length=20)\n    discription = models.TextField(null=True, blank=True, max_length=500)\n    price = models.DecimalField(max_digits=10, decimal_places=2)",
         "detail": "returante.models",
         "documentation": {}
     },
@@ -1299,7 +1650,7 @@
         "kind": 6,
         "importPath": "returante.models",
         "description": "returante.models",
-        "peekOfCode": "class Reservation(models.Model):\n    name = models.CharField(max_length=30)\n    email = models.EmailField()\n    date = models.DateTimeField(auto_now_add=True)\n    meassage = models.TextField(max_length=500, null=True, blank=True)\n    guest_phone_num = models.IntegerField()\n    def __str__(self):\n        return f\"placed reservertion by {self.name} on {self.date}\"\nclass GroupLink(models.Model):\n    title = models.CharField(max_length=100, default=\"KFC Student Group\")",
+        "peekOfCode": "class Reservation(models.Model):\n    name = models.CharField(max_length=30)\n    email = models.EmailField()\n    date = models.DateTimeField()\n    meassage = models.TextField(max_length=500, null=True, blank=True)\n    guest_phone_num = models.IntegerField()\n    menu_items = models.ManyToManyField(Menu, blank=True)\n    def __str__(self):\n        return f\"placed reservertion by {self.name} on {self.date}\"\nclass GroupLink(models.Model):",
         "detail": "returante.models",
         "documentation": {}
     },
@@ -1317,7 +1668,7 @@
         "kind": 6,
         "importPath": "returante.models",
         "description": "returante.models",
-        "peekOfCode": "class Student(models.Model):\n    name = models.CharField(max_length=100)\n    age = models.IntegerField(blank=True, null=True)\n    email = models.EmailField()\n    phone_number = models.CharField(max_length=15)\n    registered_on = models.DateTimeField(auto_now_add=True)\n    reason = models.TextField(blank=True, null=True)\n    whatsapp_joined = models.BooleanField(default=False)\n    joined_group_name = models.ForeignKey(\n        GroupLink,",
+        "peekOfCode": "class Student(models.Model):\n    name = models.CharField(max_length=100)\n    email = models.EmailField()\n    phone_number = models.CharField(max_length=15)\n    registered_on = models.DateTimeField(auto_now_add=True)\n    reason = models.TextField(blank=True, null=True)\n    whatsapp_joined = models.BooleanField(default=False)\n    joined_group_name = models.ForeignKey(\n        GroupLink,\n        on_delete=models.SET_NULL,",
         "detail": "returante.models",
         "documentation": {}
     },
@@ -1335,7 +1686,16 @@
         "kind": 6,
         "importPath": "returante.models",
         "description": "returante.models",
-        "peekOfCode": "class GalleryItem(models.Model):\n    name = models.CharField(max_length=255)\n    image = models.ImageField(upload_to=\"gallery/\")\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.name",
+        "peekOfCode": "class GalleryItem(models.Model):\n    name = models.CharField(max_length=255)\n    image = models.ImageField(upload_to=\"gallery/\")\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.name\nclass BlogDisplay(models.Model):\n    title = models.CharField(max_length=50)\n    sub_title = models.CharField(max_length=100, blank=True, null=True)\n    image = models.ImageField(upload_to=\"blogs/\")",
+        "detail": "returante.models",
+        "documentation": {}
+    },
+    {
+        "label": "BlogDisplay",
+        "kind": 6,
+        "importPath": "returante.models",
+        "description": "returante.models",
+        "peekOfCode": "class BlogDisplay(models.Model):\n    title = models.CharField(max_length=50)\n    sub_title = models.CharField(max_length=100, blank=True, null=True)\n    image = models.ImageField(upload_to=\"blogs/\")\n    description = models.TextField(max_length=500, blank=True, null=True)\n    created_at = models.DateField(auto_now_add=True)\n    def save(self, *args, **kwargs):\n        # Auto-generate subtitle if none provided\n        if not self.sub_title:\n            self.sub_title = self.title[:20]",
         "detail": "returante.models",
         "documentation": {}
     },
@@ -1353,7 +1713,7 @@
         "kind": 5,
         "importPath": "returante.urls",
         "description": "returante.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.home, name=\"home\"),\n    path(\"blog/\", views.blog, name=\"blog\"),\n    path(\"gallery/\", views.gallery, name=\"gallery\"),\n    path(\"about/\", views.about, name=\"about\"),\n    path(\"contact/\", views.contact, name=\"contact\"),\n    path(\"menu/<int:id>\", views.menu, name=\"menu\"),\n    path(\"Registeration/\", views.student_registration, name=\"student\"),\n    path(\"reservation\", views.reservation_view, name=\"reservation\"),\n    path(\"\", include(\"rest_framework.urls\", namespace=\"rest_framework\")),",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.home, name=\"home\"),\n    path(\"blog/\", views.blog, name=\"blog\"),\n    path(\"gallery/\", views.gallery, name=\"gallery\"),\n    path(\"about/\", views.about, name=\"about\"),\n    path(\"contact/\", views.contact, name=\"contact\"),\n    path(\"menu\", views.menu, name=\"menu\"),\n    path(\"Registeration/\", views.student_registration, name=\"student\"),\n    path(\"reservation\", views.reservation_view, name=\"reservation\"),\n    path(\"\", include(\"rest_framework.urls\", namespace=\"rest_framework\")),",
         "detail": "returante.urls",
         "documentation": {}
     },
@@ -1362,7 +1722,7 @@
         "kind": 2,
         "importPath": "returante.views",
         "description": "returante.views",
-        "peekOfCode": "def home(request):\n    return render(request, \"public.html\")\ndef blog(request):\n    response = requests.get(\n        \"https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian\"\n    )\n    data = response.json()\n    meals = data.get(\"meals\", [])\n    context = {\"meals\": meals}\n    return render(request, \"blog.html\", context)",
+        "peekOfCode": "def home(request):\n    return render(request, \"public.html\")\ndef blog(request):\n    response = requests.get(\n        \"https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian\"\n    )\n    data = response.json()\n    meals = data.get(\"meals\", [])\n    blogs = BlogDisplay.objects.all().order_by(\"created_at\")\n    context = {\"meals\": meals, \"blogs\": blogs}",
         "detail": "returante.views",
         "documentation": {}
     },
@@ -1371,7 +1731,16 @@
         "kind": 2,
         "importPath": "returante.views",
         "description": "returante.views",
-        "peekOfCode": "def blog(request):\n    response = requests.get(\n        \"https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian\"\n    )\n    data = response.json()\n    meals = data.get(\"meals\", [])\n    context = {\"meals\": meals}\n    return render(request, \"blog.html\", context)\ndef about(request):\n    return render(request, \"about.html\")",
+        "peekOfCode": "def blog(request):\n    response = requests.get(\n        \"https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian\"\n    )\n    data = response.json()\n    meals = data.get(\"meals\", [])\n    blogs = BlogDisplay.objects.all().order_by(\"created_at\")\n    context = {\"meals\": meals, \"blogs\": blogs}\n    return render(request, \"blog.html\", context)\ndef blog_details(request, pk):",
+        "detail": "returante.views",
+        "documentation": {}
+    },
+    {
+        "label": "blog_details",
+        "kind": 2,
+        "importPath": "returante.views",
+        "description": "returante.views",
+        "peekOfCode": "def blog_details(request, pk):\n    blog = get_object_or_404(BlogDisplay, pk=pk)\n    return render(request, \"blog_details.html\", {\"blog\": blog})\ndef about(request):\n    return render(request, \"about.html\")\ndef contact(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        email = request.POST.get(\"email\")\n        desc = request.POST.get(\"description\")",
         "detail": "returante.views",
         "documentation": {}
     },
@@ -1398,7 +1767,7 @@
         "kind": 2,
         "importPath": "returante.views",
         "description": "returante.views",
-        "peekOfCode": "def menu(request, id=None):\n    menus = Menu.objects.all()\n    if request.method == \"GET\":\n        serializer = MenuSerializer(menus, many=True)\n        return Response(serializer.data)\n    elif request.method == \"PUT\":\n        menus = Menu.objects.get(id=id)\n        serializer = MenuSerializer(menus, data=request.data)\n        if serializer.is_valid():\n            serializer.save()",
+        "peekOfCode": "def menu(request, category=None):\n    menus = Menu.objects.all()\n    category_filter = request.GET.get(\"category\")\n    if category_filter in [\"food\", \"drink\", \"snack\"]:\n        menus = menus.filter(selection=category_filter)\n    context = {\"menus\": menus, \"active_category\": category_filter}\n    return render(request, \"menu.html\", context)\ndef reservation_view(request):\n    if request.method == \"POST\":\n        form = ReservationForm(request.POST)",
         "detail": "returante.views",
         "documentation": {}
     },
@@ -1407,7 +1776,7 @@
         "kind": 2,
         "importPath": "returante.views",
         "description": "returante.views",
-        "peekOfCode": "def reservation_view(request):\n    if request.method == \"POST\":\n        name = request.POST.get(\"name\")\n        email = request.POST.get(\"email\")\n        date = request.POST.get(\"date\")\n        number = request.POST.get(\"guest_phone_num\")\n        description = request.POST.get(\"message\")\n        if not all([name, email, date, number, description]):\n            return render(\n                request,",
+        "peekOfCode": "def reservation_view(request):\n    if request.method == \"POST\":\n        form = ReservationForm(request.POST)\n        if form.is_valid():\n            # Save the reservation\n            reservation = form.save()\n            # Extract data from the saved reservation\n            name = reservation.name\n            email = reservation.email\n            date = reservation.date",
         "detail": "returante.views",
         "documentation": {}
     },

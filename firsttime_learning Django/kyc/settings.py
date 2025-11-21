@@ -28,17 +28,38 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = str(os.getenv("DEBUG")) == "False"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+
+# Custom Admin URL
+ADMIN_URL = os.environ.get("ADMIN_URL", "admin/")
+
+# Custom Domain
+DOMAIN = os.environ.get("DOMAIN", "")
+
+# Optional Region
+REGION = os.environ.get("REGION", "")
+
+# Example
+print("Loaded region:", REGION)
+
 TAILWIND_APP_NAME = "theme"
 
 NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+INTERNAL_IPS = ["127.0.0.1", "172.30.0.1", "10.0.0.9"]
+
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+if os.environ.get("DOMAIN"):
+    ALLOWED_HOSTS.append(os.environ.get("DOMAIN"))
+
 
 # Application definition
 
@@ -63,6 +84,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -103,41 +125,54 @@ DATABASES = {
     }
 }
 
-DB_USERNAME = os.getenv("POSTGRES_USR")
-DB_PASSWORD = os.getenv("POSTGRES_PASSWORD")
-DB_DATABASE = os.getenv("POSTGRES_DB")
-DB_HOST = os.getenv("POSTGRES_HOST")
-DB_PORT = os.getenv("POSTGRES_PORT")
+# Always try DATABASE_URL first
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-DB_CONF = all([DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_HOST, DB_PORT])
-
-POSTGRES_READY = str(os.getenv("POSTGRES_READY")) == "True"
-
-if DB_CONF and POSTGRES_READY:
+if DATABASE_URL:
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": DB_DATABASE,
-            "USER": DB_USERNAME,
-            "PASSWORD": DB_PASSWORD,
-            "HOST": DB_HOST,
-            "PORT": DB_PORT,
-            "OPTIONS": {
-                "connect_timeout": 5,
-                "sslmode": "require",
-            },
-        }
+        "default": dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True,
+        )
     }
 else:
-    print("Using Sqlite as the database backend.")
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
+    # Manual postgres (Aiven)
+    POSTGRES_READY = os.getenv("POSTGRES_READY", "False") == "True"
 
-print(DATABASES)
+    DB_USERNAME = os.getenv("POSTGRES_USR")
+    DB_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+    DB_DATABASE = os.getenv("POSTGRES_DB")
+    DB_HOST = os.getenv("POSTGRES_HOST")
+    DB_PORT = os.getenv("POSTGRES_PORT", "5432")
+
+    if (
+        all([DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_HOST, DB_PORT])
+        and POSTGRES_READY
+    ):
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.postgresql",
+                "NAME": DB_DATABASE,
+                "USER": DB_USERNAME,
+                "PASSWORD": DB_PASSWORD,
+                "HOST": DB_HOST,
+                "PORT": DB_PORT,
+                "OPTIONS": {
+                    "connect_timeout": 5,
+                    "sslmode": "require",
+                },
+            }
+        }
+    else:
+        print("Using SQLite Database")
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": BASE_DIR / "db.sqlite3",
+            }
+        }
+# print(DATABASES)
 
 
 # Password validation
@@ -182,6 +217,8 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

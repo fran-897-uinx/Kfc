@@ -158,7 +158,7 @@ def reservation_view(request):
                 "📩 New Reservation Received",
                 "",
                 settings.DEFAULT_FROM_EMAIL,
-                [settings.DEFAULT_FROM_EMAIL],  # Or your actual owner email(s)
+                [settings.EMAIL_HOST_USER],  # Or your actual owner email(s)
             )
             owner_email.attach_alternative(owner_html, "text/html")
             owner_email.send(fail_silently=False)

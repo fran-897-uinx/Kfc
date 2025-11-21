@@ -1,8 +1,11 @@
-{% load static %} {% load tailwind_tags %} {% tailwind_css %}
+{% load static %} 
+{% load tailwind_tags %} 
+{% tailwind_css %}
 
 <div class="relative w-full overflow-hidden bg-gray-900">
   <!-- Carousel Wrapper -->
   <div class="carousel w-full h-[85vh]">
+
     <!-- Slide 1 -->
     <div id="item1" class="carousel-item relative w-full">
       <img
@@ -16,31 +19,32 @@
           <h6
             class="text-md md:text-lg font-light italic tracking-tight mb-4 animate-fadeInUp capitalize"
           >
-            welcome our delicious conner
-            <span class="text-2xl font-bold md:px-3.5 px-1 md:pr-0 pr-6"
-              >KFC</span
-            >
-            the resturant of dreams
+            Welcome to our delicious corner at 
+            <span class="text-2xl font-bold md:px-3.5 px-1">KFC Catrey</span>
+            — the restaurant of dreams.
           </h6>
+
           <h1
             class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 animate-fadeInUp uppercase md:pl-14"
           >
-            Behind the dishes
+            Behind the Dishes
           </h1>
+
           <p
             class="md:text-lg font-light italic tracking-tight animate-fadeInUp caption-bottom text-center md:pl-12 mb-11"
           >
-            here we offer various kind and types of food, snacks and drinks you
-            can slide left to see other thing we can do
+            We serve a variety of foods, snacks, and drinks made freshly every day.
+            Slide left to explore everything we offer for your enjoyment.
           </p>
         </div>
-        <!-- <p class="text-2xl font-light mb-6">$800</p> -->
+
         <button
           class="bg-white text-gray-900 hover:bg-gray-200 font-semibold px-6 py-3 rounded-full transition-all duration-300"
         >
-          Get in Touch &nearrow;
+          <a href="{% url 'contact' %}"> Get in Touch &nearrow; </a>
         </button>
       </div>
+
       <div
         class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
       >
@@ -61,28 +65,31 @@
         <h6
           class="text-md md:text-lg font-light italic tracking-tight mb-2 animate-fadeInUp capitalize"
         >
-          In <span class="text-2xl font-bold px-0.5">KFC</span> the resturant of
-          dreams <span>we offer</span>
+          At <span class="text-2xl font-bold px-0.5">KFC Catrey</span>, the restaurant of dreams, we serve:
         </h6>
+
         <h1
           class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 animate-fadeInUp"
         >
-          Presentable Foods
+          Presentable Nigerian Foods
         </h1>
+
         <h6
           class="text-md md:text-lg font-light italic tracking-tight mb-4 animate-fadeInUp capitalize"
         >
-          such as Amala, Rice, Beans, Yam, Egusi, Ewedu, Ofensala, nkwubi,
+          Amala, Rice, Beans, Yam, Egusi, Ewedu, Ofensala, Nkwobi,
           <br />
-          and many more you can click the get in touch button to contact us for
-          more
+          and many more delicious Nigerian meals.  
+          Contact us for full menu details.
         </h6>
+
         <button
           class="bg-white text-gray-900 hover:bg-gray-200 font-semibold px-6 py-3 rounded-full transition-all duration-300"
         >
-          Get in Touch &nearrow;
+          <a href="{% url 'contact' %}"> Get in Touch &nearrow; </a>
         </button>
       </div>
+
       <div
         class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
       >
@@ -100,31 +107,32 @@
       <div
         class="absolute inset-0 flex flex-col justify-center items-start text-left px-12 md:px-24 lg:px-36 text-white"
       >
-        <h6
-          class="text-md md:text-lg font-light italic tracking-tight mb-2 animate-fadeInUp capitalize"
-        >
-          In <span class="text-2xl font-bold px-0.5">KFC</span> the resturant of
-          dreams <span>we offer aswell </span>
+        <h6 class="text-md md:text-lg font-light italic tracking-tight mb-2 animate-fadeInUp capitalize">
+          At <span class="text-2xl font-bold px-0.5">KFC Catrey</span>, we also offer:
         </h6>
+
         <h1
           class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 animate-fadeInUp"
         >
-          Diffirent Kind of Drinks
+          A Variety of Drinks
         </h1>
+
         <h6
           class="text-md md:text-lg font-light italic tracking-tight mb-4 animate-fadeInUp capitalize"
         >
-          such as Soft drinks, Acohols, Soda, Palm wine, Hots(of different kind)
+          Soft drinks, Alcohols, Soda, Palm wine,  
           <br />
-          and many more you can click the get in touch button to contact us for
-          more
+          and different types of hot drinks.  
+          Contact us for more details.
         </h6>
+
         <button
           class="bg-white text-gray-900 hover:bg-gray-200 font-semibold px-6 py-3 rounded-full transition-all duration-300"
         >
-          Get in Touch &nearrow;
+          <a href="{% url 'contact' %}"> Get in Touch &nearrow; </a>
         </button>
       </div>
+
       <div
         class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
       >
@@ -139,57 +147,47 @@
         src="{% static 'imgs/snacks.jpg' %}"
         class="object-cover w-full h-[85vh] brightness-55 md:block hidden"
       />
-      <div class="w-full h-[85vh] brightness-75 relative ">
+
+      <div class="w-full h-[85vh] brightness-75 relative">
         <img
           src="{% static 'imgs/peppers.jpg' %}"
           class="object-cover w-full h-[85vh] brightness-55"
         />
-        <div class="absolute inset-0 grid grid-cols-2 gap-1 items-center brightness-85">
-          <img
-            src="{% static 'imgs/rice.jpg' %}"
-            class="object-cover w-full h-[41vh] brightness-75 rounded-full"
-          />
-          <img
-            src="{% static 'imgs/crackers.jpg' %}"
-            class="object-cover w-full h-[41vh] brightness-75 rounded-full"
-          />
-          <img
-            src="{% static 'imgs/view.jpg' %}"
-            class="object-cover w-full h-[41vh] brightness-75 rounded-full"
-          />
-          <img
-            src="{% static 'imgs/snacks.jpg' %}"
-            class="object-cover w-full h-[41vh] brightness-75 rounded-full"
-          />
+
+        <div
+          class="absolute inset-0 grid grid-cols-2 gap-1 items-center brightness-85"
+        >
+          <img src="{% static 'imgs/rice.jpg' %}" class="object-cover w-full h-[41vh] brightness-75 rounded-full" />
+          <img src="{% static 'imgs/crackers.jpg' %}" class="object-cover w-full h-[41vh] brightness-75 rounded-full" />
+          <img src="{% static 'imgs/view.jpg' %}" class="object-cover w-full h-[41vh] brightness-75 rounded-full" />
+          <img src="{% static 'imgs/snacks.jpg' %}" class="object-cover w-full h-[41vh] brightness-75 rounded-full" />
         </div>
       </div>
+
       <div
         class="absolute inset-0 flex flex-col justify-center items-start text-left px-12 md:px-24 lg:px-36 text-white"
       >
-        <h6
-          class="text-md md:text-lg font-light italic tracking-tight mb-2 animate-fadeInUp capitalize"
-        >
-          In <span class="text-2xl font-bold px-0.5">KFC</span> the resturant of
-          dreams <span>we offer aswell </span>
+        <h6 class="text-md md:text-lg font-light italic tracking-tight mb-2 animate-fadeInUp capitalize">
+          At <span class="text-2xl font-bold px-0.5">KFC Catrey</span>, we also prepare:
         </h6>
-        <h1
-          class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 animate-fadeInUp italic font-stretch-semi-expanded"
-        >
+
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 animate-fadeInUp italic">
           Special Dishes
         </h1>
-        <h6
-          class="text-md md:text-xl font-light italic tracking-tight mb-4 animate-fadeInUp capitalize"
-        >
-          such as Soft drinks, Acohols, Soda, Palm wine, Hots(of different kind)
+
+        <h6 class="text-md md:text-xl font-light italic tracking-tight mb-4 animate-fadeInUp capitalize">
+          Snacks, grilled meals, African soups,  
           <br />
-          and many more you can click the get in touch button to contact us for
-          more
+          and many more exciting options for you to enjoy.
         </h6>
+
         <button
-          class="bg-white text-gray-900 hover:bg-gray-200 font-semibold px-6 py-3 rounded-full transition-all duration-300" >
-          Get in Touch &nearrow;
+          class="bg-white text-gray-900 hover:bg-gray-200 font-semibold px-6 py-3 rounded-full transition-all duration-300"
+        >
+          <a href="{% url 'contact' %}"> Get in Touch &nearrow; </a>
         </button>
       </div>
+
       <div
         class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
       >
@@ -203,14 +201,8 @@
 <!-- Optional Animations -->
 <style>
   @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
   .animate-fadeInUp {
     animation: fadeInUp 1s ease-out;

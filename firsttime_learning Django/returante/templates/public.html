@@ -1,39 +1,42 @@
-{% extends "main.html" %} {% block content %} {%load static%}
+{% extends "main.html" %}
+{% block content %}
+{% load static %}
 
 <div class="mt-3">
   {% include "slide.html" %}
 
   <div class="grid md:flex gap-20 flex-2 md:justify-center p-5 md:p12 auto-cols-fr w-full md:mt-12">
     <div class="md:w-2xl w-full">
-      <h2 class="font-bold text-2xl pb-8 uppercase">WELCOME TO KFC Restaurant</h2>
+      <h2 class="font-bold text-2xl pb-8 uppercase">WELCOME TO KFC CATREY RESTAURANT</h2>
+
       <p class="text-md pb-3">
-        arrangement are made to transport cargo by to meet customers <br />
-        international transportation needs the space and places we imagine
-        <br />and envision for our clients wanting to make an impact with
-        design.
+        At KFC Catrey Restaurant, we are dedicated to serving freshly prepared meals, snacks, 
+        and beverages to satisfy all tastes. We provide an exceptional dining experience with 
+        well-arranged dishes and a relaxing atmosphere designed to make every visit special.
       </p>
+
       <div class="grid gap-2">
         <div>
           <div class="flex items-center">
-            <img src="{% static 'imgs/drinks.jpg' %}" alt="" class="w-5 h-5 rounded-b-full" />
-            <h3 class="font-bold text-shadow-2xs">Evolve Space Designs</h3>
+            <!-- <img src="{% static 'imgs/drinks.jpg' %}" alt="" class="w-5 h-5 rounded-b-full" /> -->
+            <h3 class="font-bold text-shadow-2xs">Quality Food & Drinks</h3>
           </div>
           <p class="font-light text-gray-500 text-wrap md:pr-30">
-            it is a long established fact that a reader will be distracted by
-            the readable
+            Enjoy a wide range of delicious meals and refreshing drinks, all made with premium ingredients.
           </p>
         </div>
+
         <div>
           <div class="flex items-center">
-            <img src="{% static 'imgs/snacks.jpg' %}" alt="" class="w-5 h-5 rounded-b-full" />
-            <h3 class="font-bold text-shadow-2xs">Evolve Space Designs</h3>
+            <!-- <img src="{% static 'imgs/snacks.jpg' %}" alt="" class="w-5 h-5 rounded-b-full" /> -->
+            <h3 class="font-bold text-shadow-2xs">Snacks & Special Recipes</h3>
           </div>
           <p class="font-light text-gray-500 text-wrap md:pr-30">
-            it is a long established fact that a reader will be distracted by
-            the readable
+            From light snacks to special dishes, we offer flavors that leave a lasting impression.
           </p>
         </div>
       </div>
+
       <button
         class="bg-gray-700 dark:bg-gray-500 text-black dark:text-white p-2 px-3 mt-12 cursor-pointer"
       >
@@ -43,15 +46,15 @@
 
     <div class="border-2 w-80 h-70 bg-cover bg-center">
       <img
-        src="{%static 'imgs/view.jpg'%}"
+        src="{% static 'imgs/view.jpg' %}"
         alt=""
-        class="w-full bg-cover h-full bg-center "
+        class="w-full bg-cover h-full bg-center"
       />
       <div
-        class="border-4 border-gray-600 w-60 grid p-6 bg-white backdrop-blur-sm text-black relative  -top-60 left-30"
+        class="border-4 border-gray-600 w-60 grid p-6 bg-white backdrop-blur-sm text-black relative -top-60 left-30"
       >
         <h2 class="font-extrabold font-stretch-90% font-sans pb-5">
-          FUNFACTS IN GREAT NUMBERS
+          FUN FACTS ABOUT US
         </h2>
 
         <h6 class="font-semibold text-sm">
@@ -62,23 +65,7 @@
       </div>
     </div>
   </div>
+
   {% include "special.html" %}
 </div>
 {% endblock %}
-
-<!-- {% comment %} diff component {% endcomment %}
-<figure class="diff aspect-16/9" tabindex="0">
-  <div class="diff-item-1" role="img" tabindex="0">
-    <img
-      alt="daisy"
-      src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.webp"
-    />
-  </div>
-  <div class="diff-item-2" role="img">
-    <img
-      alt="daisy"
-      src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.webp"
-    />
-  </div>
-  <div class="diff-resizer"></div>
-</figure> -->

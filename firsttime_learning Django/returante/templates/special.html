@@ -1,125 +1,116 @@
-{%load static%}
+{% load static %}
 <style>
   .tres {
     font-size: x-small;
   }
 </style>
-<main class="py-2 md:px-25 h-auto gap-7 justify-center flex flex-col-reverse  px-3 md:flex-row">
-  <div class="md:w-lg  w-full h-120">
+
+<main class="py-2 md:px-25 h-auto gap-7 justify-center flex flex-col-reverse px-3 md:flex-row">
+
+  <!-- Left Image -->
+  <div class="md:w-lg w-full h-120">
     <img src="{% static 'imgs/peppers.jpg' %}" alt="" class="h-full w-full scale-100" />
   </div>
+
+  <!-- Right Content -->
   <div class="md:w-lg w-full pr-9 pt-4">
-    <h6
-      class="text-sm md:text-md font-light italic tracking-tight mb-2 animate-fadeInUp capitalize"
-    >
+    <h6 class="text-sm md:text-md font-light italic tracking-tight mb-2 animate-fadeInUp capitalize">
       our healthy food
     </h6>
-    <h2
-      class="font-bold md:text-2xl text-3xl font-mono capitalize animate-fadeInUp"
-    >
+
+    <h2 class="font-bold md:text-2xl text-3xl font-mono capitalize animate-fadeInUp">
       our special
     </h2>
 
     <section class="grid gap-7 pb-5">
-      <div>
-        <span class="flex w-full flex-2 item-center mt-2 animate-fadeInUp">
-          <h6
-            class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp tite"
-          >
-            finese tartare steak
-            <span class="flex gap-2 text-orange-800 animate-fadeInUp">
-              <div class="w-40 h-0  border-1 mt-2 animate-fadeInUp"></div>
-              $50
-            </span>
-          </h6>
-        </span>
-        <p
-          class="font-light font-mono tracking-tight italic tres animate-fadeInUp"
-        >
-          this is one of our best dished food the least
-        </p>
-      </div>
 
+      <!-- Chinchin -->
       <div>
         <span class="flex w-full flex-2 item-center mt-2 animate-fadeInUp">
-          <h6
-            class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp"
-          >
-            creamy chicken soup
-            <span class="flex gap-2 text-orange-800 animate-fadeInUp">
-              <div class="w-40 h-0  border-1 mt-2 animate-fadeInUp"></div>
-              $60
-            </span>
-          </h6>
-        </span>
-        <p
-          class="font-light font-mono tracking-tight italic tres animate-fadeInUp"
-        >
-          this is one of our best dished food the least
-        </p>
-      </div>
-
-      <div>
-        <span class="flex w-full flex-2 item-center mt-2 animate-fadeInUp">
-          <h6
-            class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp"
-          >
-            boiled eggs on toast
+          <h6 class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp">
+            freshly made chinchin
             <span class="flex gap-2 text-orange-800 animate-fadeInUp">
               <div class="w-40 h-0 border-1 mt-2 animate-fadeInUp"></div>
-              $120
+              ₦1,500
             </span>
           </h6>
         </span>
-        <p
-          class="font-light font-mono tracking-tight italic tres animate-fadeInUp"
-        >
-          this is one of our best dished food the least
+        <p class="font-light font-mono tracking-tight italic tres animate-fadeInUp">
+          Crunchy, sweet, and perfectly baked — loved by all our customers.
         </p>
       </div>
 
+      <!-- Shawarma -->
       <div>
         <span class="flex w-full flex-2 item-center mt-2 animate-fadeInUp">
-          <h6
-            class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp"
-          >
-            best roasted rumsteak
+          <h6 class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp">
+            chicken shawarma
             <span class="flex gap-2 text-orange-800 animate-fadeInUp">
-              <div class="w-40 h-0  border-1 mt-2 animate-fadeInUp"></div>
-              $150
+              <div class="w-40 h-0 border-1 mt-2 animate-fadeInUp"></div>
+              ₦3,000
             </span>
           </h6>
         </span>
-        <p
-          class="font-light font-mono tracking-tight italic tres animate-fadeInUp"
-        >
-          this is one of our best dished food the least
+        <p class="font-light font-mono tracking-tight italic tres animate-fadeInUp">
+          Soft wrap, spicy chicken, creamy sauce — the best shawarma in Nnewi.
         </p>
       </div>
 
+      <!-- Jollof Rice -->
       <div>
         <span class="flex w-full flex-2 item-center mt-2 animate-fadeInUp">
-          <h6
-            class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp"
-          >
-            risotto & mushrooms
+          <h6 class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp">
+            nigerian jollof rice
             <span class="flex gap-2 text-orange-800 animate-fadeInUp">
-              <div class="w-40 h-0  border-1 mt-2 animate-fadeInUp"></div>
-              $90
+              <div class="w-40 h-0 border-1 mt-2 animate-fadeInUp"></div>
+              ₦2,500
             </span>
           </h6>
         </span>
-        <p
-          class="font-light font-mono tracking-tight italic tres animate-fadeInUp"
-        >
-          this is one of our best dished food the least
+        <p class="font-light font-mono tracking-tight italic tres animate-fadeInUp">
+          Smoky party-style jollof cooked with rich spices and fresh ingredients.
         </p>
       </div>
 
+      <!-- Roasted Chicken -->
+      <div>
+        <span class="flex w-full flex-2 item-center mt-2 animate-fadeInUp">
+          <h6 class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp">
+            roasted chicken (full plate)
+            <span class="flex gap-2 text-orange-800 animate-fadeInUp">
+              <div class="w-40 h-0 border-1 mt-2 animate-fadeInUp"></div>
+              ₦4,500
+            </span>
+          </h6>
+        </span>
+        <p class="font-light font-mono tracking-tight italic tres animate-fadeInUp">
+          Tender, juicy, and perfectly seasoned — a customer favourite.
+        </p>
+      </div>
+
+      <!-- African Soup -->
+      <div>
+        <span class="flex w-full flex-2 item-center mt-2 animate-fadeInUp">
+          <h6 class="uppercase md:text-sm text-xs font-bold flex item-center gap-5 animate-fadeInUp">
+            egusi soup + fufu
+            <span class="flex gap-2 text-orange-800 animate-fadeInUp">
+              <div class="w-40 h-0 border-1 mt-2 animate-fadeInUp"></div>
+              ₦2,200
+            </span>
+          </h6>
+        </span>
+        <p class="font-light font-mono tracking-tight italic tres animate-fadeInUp">
+          Rich melon soup with assorted meat, served hot with fresh fufu.
+        </p>
+      </div>
+
+      <!-- Button -->
       <button type="button" class="p-1 text-md font-light bg-orange-700 w-24 cursor-pointer">
-        <a href="{% url 'reservation' %}" class=" text-gray-900 p-1 text-md font-light"> order now</a>
-       
+        <a href="{% url 'reservation' %}" class="text-gray-900 p-1 text-md font-light">
+          order now
+        </a>
       </button>
+
     </section>
   </div>
 </main>
